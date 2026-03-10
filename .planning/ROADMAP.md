@@ -10,7 +10,7 @@
 
 - [x] **Phase 1: Core Infrastructure** - Build execution framework with orchestrator, shared libraries, and idempotent system updates ✓ Complete
 - [x] **Phase 2: User Management** - Create bryan and amazeeio users with SSH keys and secure passwords (completed 2026-03-10)
-- [ ] **Phase 3: Access Control** - Configure passwordless sudo with validated syntax and correct permissions
+- [x] **Phase 3: Access Control** - Configure passwordless sudo with validated syntax and correct permissions (completed 2026-03-10)
 
 ---
 
@@ -20,7 +20,7 @@
 |-------|----------------|--------|-----------|
 | 1. Core Infrastructure | 2/2 | Complete    | 2026-03-10 |
 | 2. User Management | 0/2 | Complete    | 2026-03-10 |
-| 3. Access Control | 0/2 | Not started | - |
+| 3. Access Control | 0/2 | Complete    | 2026-03-10 |
 
 ---
 
@@ -90,7 +90,7 @@ Plans:
 4. **Sudoers files have correct permissions** - Files in /etc/sudoers.d/ are mode 440 (readable by root only)
 5. **Both users can complete full workflow** - Either user can SSH in, run sudo commands without password
 
-**Plans:** 2 plans
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] `03-01-PLAN.md` — Create sudo library (lib/sudo.sh) and bryan sudoers module (modules/30-sudo/10-bryan-sudo.sh)
