@@ -18,7 +18,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Core Infrastructure | 0/3 | Not started | - |
+| 1. Core Infrastructure | 0/2 | Planning complete | - |
 | 2. User Management | 0/2 | Not started | - |
 | 3. Access Control | 0/2 | Not started | - |
 
@@ -42,7 +42,11 @@
 4. **Operations are idempotent** - Running install.sh multiple times produces same result without errors
 5. **System updates run automatically** - `apt update` executes before any package operations, kitty-terminfo installs successfully
 
-**Plans:** TBD
+**Plans:** 2 plans in 2 waves
+
+Plans:
+- [ ] `01-01-PLAN.md` — Create shared library (lib/common.sh) and main orchestrator (install.sh)
+- [ ] `01-02-PLAN.md` — Create system modules (apt update, kitty-terminfo) with idempotency verification
 
 ---
 
