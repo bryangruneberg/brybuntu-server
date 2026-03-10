@@ -50,7 +50,6 @@
 - **COMP-01**: Docker installation module
 - **COMP-02**: Development tools installation (git, curl, wget, etc.)
 - **COMP-03**: Dotfiles management integration
-- **COMP-04**: Firewall (ufw) configuration
 
 ### Operational
 
@@ -66,7 +65,7 @@
 | GUI/desktop environment | SSH-only development server per PROJECT.md |
 | Multi-server orchestration | Use Ansible/Salt for fleet management |
 | Secrets management | Out of scope, use proper secrets manager |
-| Complex firewall rules | Basic SSH only for v1 |
+| Firewall configuration | Handled at infrastructure level, not by this tool |
 | Password SSH authentication | Security anti-pattern, keys only |
 | Cloud-init integration | Tool is for any Ubuntu server, not cloud-specific |
 
@@ -95,9 +94,17 @@
 | SUDO-04 | Phase 3 | Pending |
 
 **Coverage:**
-- v1 requirements: 16 total
-- Mapped to phases: 16
+- v1 requirements: 19 total (4 CORE + 3 SYS + 8 USER + 4 SUDO)
+- Mapped to phases: 19
 - Unmapped: 0 ✓
+
+### Phase Mapping Summary
+
+| Phase | Requirements | Count |
+|-------|--------------|-------|
+| Phase 1: Core Infrastructure | CORE-01..04, SYS-01..03 | 7 |
+| Phase 2: User Management | USER-01..08 | 8 |
+| Phase 3: Access Control | SUDO-01..04 | 4 |
 
 ---
 *Requirements defined: 2025-03-10*
