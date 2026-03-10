@@ -66,7 +66,11 @@ Plans:
 4. **"amazeeio" user exists with SSH key access** - Same criteria as bryan user
 5. **SSH directories have correct permissions** - .ssh directory is 700, authorized_keys is 600
 
-**Plans:** TBD
+**Plans:** 2 plans created
+
+Plans:
+- [ ] `02-01-PLAN.md` — Create user library (lib/user.sh) and bryan user module (modules/20-users/10-bryan.sh)
+- [ ] `02-02-PLAN.md` — Create amazeeio user module and test infrastructure (tests/test_user_management.bats)
 
 ---
 
