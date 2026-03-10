@@ -57,11 +57,12 @@ else
     fail "20-packages.sh missing or incorrect common.sh source"
 fi
 
-# Test 6: Checks for kitty-terminfo before install (idempotency)
-if grep -q "dpkg -l.*kitty-terminfo" "$PROJECT_ROOT/modules/10-system/20-packages.sh"; then
-    pass "20-packages.sh checks if kitty-terminfo is already installed"
+# Test 6: Checks for package before install (idempotency)
+if grep -q "dpkg -l" "$PROJECT_ROOT/modules/10-system/20-packages.sh" && \
+   grep -q 'grep -q "\^ii"' "$PROJECT_ROOT/modules/10-system/20-packages.sh"; then
+    pass "20-packages.sh checks if package is already installed (idempotency)"
 else
-    fail "20-packages.sh missing idempotency check for kitty-terminfo"
+    fail "20-packages.sh missing idempotency check"
 fi
 
 # Test 7: Has install logic
