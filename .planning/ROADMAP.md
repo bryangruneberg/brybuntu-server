@@ -9,7 +9,7 @@
 ## Phases
 
 - [x] **Phase 1: Core Infrastructure** - Build execution framework with orchestrator, shared libraries, and idempotent system updates ✓ Complete
-- [ ] **Phase 2: User Management** - Create bryan and amazeeio users with SSH keys and secure passwords
+- [x] **Phase 2: User Management** - Create bryan and amazeeio users with SSH keys and secure passwords (completed 2026-03-10)
 - [ ] **Phase 3: Access Control** - Configure passwordless sudo with validated syntax and correct permissions
 
 ---
@@ -19,7 +19,7 @@
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Core Infrastructure | 2/2 | Complete    | 2026-03-10 |
-| 2. User Management | 0/2 | Not started | - |
+| 2. User Management | 0/2 | Complete    | 2026-03-10 |
 | 3. Access Control | 0/2 | Not started | - |
 
 ---
@@ -66,7 +66,7 @@ Plans:
 4. **"amazeeio" user exists with SSH key access** - Same criteria as bryan user
 5. **SSH directories have correct permissions** - .ssh directory is 700, authorized_keys is 600
 
-**Plans:** 2 plans created
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] `02-01-PLAN.md` — Create user library (lib/user.sh) and bryan user module (modules/20-users/10-bryan.sh)
@@ -90,7 +90,11 @@ Plans:
 4. **Sudoers files have correct permissions** - Files in /etc/sudoers.d/ are mode 440 (readable by root only)
 5. **Both users can complete full workflow** - Either user can SSH in, run sudo commands without password
 
-**Plans:** TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] `03-01-PLAN.md` — Create sudo library (lib/sudo.sh) and bryan sudoers module (modules/30-sudo/10-bryan-sudo.sh)
+- [ ] `03-02-PLAN.md` — Create amazeeio sudoers module (modules/30-sudo/20-amazeeio-sudo.sh)
 
 ---
 
