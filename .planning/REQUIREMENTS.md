@@ -31,10 +31,10 @@
 
 ### Privilege Configuration
 
-- [ ] **SUDO-01**: Create "/etc/sudoers.d/bryan" with "bryan ALL=(ALL) NOPASSWD: ALL"
+- [x] **SUDO-01**: Create "/etc/sudoers.d/bryan" with "bryan ALL=(ALL) NOPASSWD: ALL"
 - [ ] **SUDO-02**: Create "/etc/sudoers.d/amazeeio" with "amazeeio ALL=(ALL) NOPASSWD: ALL"
-- [ ] **SUDO-03**: Validate sudoers syntax with `visudo -c` before installing
-- [ ] **SUDO-04**: Set correct permissions on sudoers.d files (440)
+- [x] **SUDO-03**: Validate sudoers syntax with `visudo -c` before installing
+- [x] **SUDO-04**: Set correct permissions on sudoers.d files (440)
 
 ## v2 Requirements
 
@@ -88,10 +88,10 @@
 | USER-06 | Phase 2 | Pending |
 | USER-07 | Phase 2 | Pending |
 | USER-08 | Phase 2 | Pending |
-| SUDO-01 | Phase 3 | Pending |
+| SUDO-01 | Phase 3 | Complete |
 | SUDO-02 | Phase 3 | Pending |
-| SUDO-03 | Phase 3 | Pending |
-| SUDO-04 | Phase 3 | Pending |
+| SUDO-03 | Phase 3 | Complete |
+| SUDO-04 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 19 total (4 CORE + 3 SYS + 8 USER + 4 SUDO)

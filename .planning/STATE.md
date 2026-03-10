@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-10T21:44:00Z"
+last_updated: "2026-03-10T22:26:52.467Z"
 progress:
   total_phases: 3
-  completed_phases: 1
-  total_plans: 4
-  completed_plans: 3
+  completed_phases: 2
+  total_plans: 6
+  completed_plans: 5
 ---
 
 # Brybuntu Server Setup - Project State
@@ -72,6 +72,7 @@ progress:
 | 2026-03-10 | openssl rand -base64 32 | Cryptographically secure password generation |
 | 2026-03-10 | install -d for .ssh | Atomic directory creation with permissions |
 | 2026-03-10 | check-before-append SSH keys | Prevents duplicates on re-runs |
+- [Phase 03-access-control]: Mandatory visudo -c validation before any sudoers file installation
 
 ### Technical Notes
 
