@@ -7,9 +7,9 @@
 
 ### Core Infrastructure
 
-- [ ] **CORE-01**: Modular script architecture with numbered execution (10-*.sh, 20-*.sh, etc.)
-- [ ] **CORE-02**: Main orchestrator script that discovers and executes modules in order
-- [ ] **CORE-03**: Shared library for common functions (logging, error handling, idempotency checks)
+- [x] **CORE-01**: Modular script architecture with numbered execution (10-*.sh, 20-*.sh, etc.)
+- [x] **CORE-02**: Main orchestrator script that discovers and executes modules in order
+- [x] **CORE-03**: Shared library for common functions (logging, error handling, idempotency checks)
 - [ ] **CORE-04**: Idempotent operations (safe to re-run without errors)
 
 ### System Setup
@@ -73,9 +73,9 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CORE-01 | Phase 1 | Pending |
-| CORE-02 | Phase 1 | Pending |
-| CORE-03 | Phase 1 | Pending |
+| CORE-01 | Phase 1 | Complete |
+| CORE-02 | Phase 1 | Complete |
+| CORE-03 | Phase 1 | Complete |
 | CORE-04 | Phase 1 | Pending |
 | SYS-01 | Phase 1 | Pending |
 | SYS-02 | Phase 1 | Pending |
@@ -108,4 +108,4 @@
 
 ---
 *Requirements defined: 2025-03-10*
-*Last updated: 2025-03-10 after initial definition*
+*Last updated: 2026-03-10 - CORE-01, CORE-02, CORE-03 completed in 01-01*
