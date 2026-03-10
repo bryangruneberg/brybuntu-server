@@ -1,0 +1,10 @@
+{
+  "permission": {
+    "read": {
+      "/home/bryan/Projects/Brylly/brybuntu-server/.opencode/get-shit-done/*": "allow"
+    },
+    "external_directory": {
+      "/home/bryan/Projects/Brylly/brybuntu-server/.opencode/get-shit-done/*": "allow"
+    }
+  }
+}

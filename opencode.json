@@ -1,0 +1,32 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "plugin": [
+      "@tarquinen/opencode-dcp@latest"
+    ],
+    "provider": {
+        "amazeeai": {
+            "npm": "@ai-sdk/openai-compatible",
+            "name": "amazee.ai",
+            "options": {
+                "baseURL": "https://llm.us104.amazee.ai"
+            },
+            "models": {
+                "chat": {
+                    "name": "amazee.ai: Chat"
+                },
+                "claude-sonnet-4-20250514-v1": {
+                    "name": "amazee.ai: Claude 4 Sonnet"
+                },
+                "claude-opus-4-20250514-v1": {
+                    "name": "amazee.ai: Claude 4 Opus"
+                },
+                "kimi-k2-thinking": {
+                    "name": "amazee.ai: Kimi K2 Thinking"
+                },
+                "kimi-k2.5": {
+                    "name": "amazee.ai: Kimi K2.5"
+                }
+            }
+        }
+    }
+}
