@@ -3,19 +3,19 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-10T21:26:26.802Z"
+last_updated: "2026-03-10T21:44:00Z"
 progress:
   total_phases: 3
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 4
+  completed_plans: 3
 ---
 
 # Brybuntu Server Setup - Project State
 
 **Project:** Brybuntu Server Setup  
 **Core Value:** New Ubuntu server → SSH-ready development environment in one command  
-**Last Updated:** 2026-03-10T21:21:40Z
+**Last Updated:** 2026-03-10T21:44:00Z
 
 ---
 
@@ -23,10 +23,10 @@ progress:
 
 | Field | Value |
 |-------|-------|
-| **Phase** | 01-core-infrastructure |
-| **Plan** | 02 |
+| **Phase** | 02-user-management |
+| **Plan** | 01 |
 | **Status** | Complete |
-| **Progress** | `████████░░░░░░░░░░░░ 40%` |
+| **Progress** | `[████████░░] 75%` |
 
 ---
 
@@ -35,10 +35,10 @@ progress:
 | Phase | Status | Completion |
 |-------|--------|------------|
 | 1. Core Infrastructure | ✅ Complete | 100% |
-| 2. User Management | 🟡 Ready | 0% |
+| 2. User Management | 🟡 In Progress | 33% |
 | 3. Access Control | ⚪ Blocked | 0% |
 
-**Overall:** 1/3 phases complete (2 plans done in phase 1)
+**Overall:** 1/3 phases complete (3 plans done total, 1 in phase 2)
 
 ---
 
@@ -50,7 +50,7 @@ progress:
 | Requirements mapped | 19 | 100% |
 | Phases defined | 3 | 3 |
 | Success criteria defined | 15 | 15 (5 per phase) |
-| Plans created | 2 | 2 in Phase 1 |
+| Plans created | 3 | 2 in Phase 1, 1 in Phase 2 |
 
 ---
 
@@ -68,6 +68,10 @@ progress:
 | 2026-03-10 | Natural sort (sort -V) for modules | Ensures 10-*.sh comes after 09-*.sh correctly |
 | 2026-03-10 | DEBIAN_FRONTEND=noninteractive | Prevents interactive prompts during apt operations |
 | 2026-03-10 | dpkg check-before-install | Idempotency via dpkg -l | grep "^ii" pattern |
+| 2026-03-10 | adduser over useradd | Better Ubuntu integration, handles home directory |
+| 2026-03-10 | openssl rand -base64 32 | Cryptographically secure password generation |
+| 2026-03-10 | install -d for .ssh | Atomic directory creation with permissions |
+| 2026-03-10 | check-before-append SSH keys | Prevents duplicates on re-runs |
 
 ### Technical Notes
 
@@ -92,15 +96,15 @@ None currently.
 ## Session Continuity
 
 ### Last Session Actions
-- Executed 01-02-PLAN.md: Created modules/10-system/10-update.sh and 20-packages.sh
-- TDD approach: RED (failing tests) → GREEN (implementation) for both tasks
-- Verified idempotency through human checkpoint - modules work correctly on second run
-- All code passes shellcheck validation
+- Executed 02-01-PLAN.md: Created lib/user.sh and modules/20-users/10-bryan.sh
+- Created user_create_with_ssh() reusable function with idempotency
+- Implemented secure password generation with openssl rand
+- Added SSH key deployment with 700/600 permissions
+- All code passes bash syntax validation
 
 ### Next Actions
-1. Review Phase 1 success criteria against completed work
-2. Transition to Phase 2: User Management
-3. Create plans for user creation (bryan, amazeeio) with SSH keys
+1. Create 02-02 plan for amazeeio user (using same library)
+2. Proceed to Phase 3: Access Control (sudo configuration)
 
 ### Files of Interest
 - `.planning/PROJECT.md` - Project context and constraints
