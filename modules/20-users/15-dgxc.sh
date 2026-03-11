@@ -22,6 +22,9 @@ source "${SCRIPT_DIR}/../../lib/user.sh"
 # dgxc's Ed25519 SSH public key (same as bryan for initial setup)
 readonly DGXC_SSH_KEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKt9pdXZ/aI31oyRrCc7ER8pfTOcS3r04xVnEOmEjhss bryan@bryarchy"
 
+# dgxc's mobile Ed25519 SSH public key
+readonly DGXC_MOBILE_SSH_KEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINBh8/0u6pF/gTaSBkNYBXpGDPG1pODse1EX5hAkOw1l dgxc-mobile"
+
 # ============================================================================
 # Main Execution
 # ============================================================================
@@ -33,6 +36,9 @@ main() {
 
     # Create user with SSH key access
     user_create_with_ssh "dgxc" "$DGXC_SSH_KEY"
+
+    # Add mobile SSH key
+    user_create_with_ssh "dgxc" "$DGXC_MOBILE_SSH_KEY"
 
     log_info "dgxc user setup complete"
 }

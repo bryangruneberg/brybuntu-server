@@ -12,7 +12,7 @@ source "$(dirname "$0")/../../lib/common.sh"
 # ============================================================================
 
 display_ssh_keys() {
-    local users=("root" "bryan" "amazeeio")
+    local users=("root" "bryan" "amazeeio" "dgxc")
     local first_key=true
     
     echo ""
