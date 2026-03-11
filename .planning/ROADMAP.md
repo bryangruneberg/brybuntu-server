@@ -58,7 +58,10 @@
   3. Admin user can run `docker compose version` and see version output
   4. Docker daemon starts automatically after system reboot
   5. Admin user can list containers with `docker ps`
-**Plans**: TBD
+**Plans:** 3 plans (Wave 1: parallel engine + compose, Wave 2: config)
+- [ ] 06-01-PLAN.md — Install Docker Engine and CLI from official repository
+- [ ] 06-02-PLAN.md — Install Docker Compose v2 plugin
+- [ ] 06-03-PLAN.md — Configure docker group and auto-start for all users
 
 ### Phase 7: Container Management Tools
 **Goal:** Users have intuitive TUI tools for monitoring and managing containers
