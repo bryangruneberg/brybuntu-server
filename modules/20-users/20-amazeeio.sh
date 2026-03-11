@@ -22,6 +22,9 @@ source "${SCRIPT_DIR}/../../lib/user.sh"
 # amazeeio's Ed25519 SSH public key (same as bryan for initial setup)
 readonly AMAZEEIO_SSH_KEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKt9pdXZ/aI31oyRrCc7ER8pfTOcS3r04xVnEOmEjhss bryan@bryarchy"
 
+# amazeeio's mobile Ed25519 SSH public key
+readonly AMAZEEIO_MOBILE_SSH_KEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDKj0wr8mqZE9JuFvE9EE+1qsYZ/n8d0sKPAp4TWrCxY bryan-mobile"
+
 # ============================================================================
 # Main Execution
 # ============================================================================
@@ -33,6 +36,9 @@ main() {
 
     # Create user with SSH key access
     user_create_with_ssh "amazeeio" "$AMAZEEIO_SSH_KEY"
+
+    # Add mobile SSH key
+    user_create_with_ssh "amazeeio" "$AMAZEEIO_MOBILE_SSH_KEY"
 
     log_info "amazeeio user setup complete"
 }
