@@ -53,14 +53,14 @@
 
 ### dgxc User Addition
 
-- [ ] **DGXC-01**: Create "dgxc" user if not exists using `adduser`
-- [ ] **DGXC-02**: Set random password for "dgxc" user (displayed once at creation)
-- [ ] **DGXC-03**: Create "/home/dgxc/.ssh" directory with correct permissions (700)
-- [ ] **DGXC-04**: Add SSH public key to "/home/dgxc/.ssh/authorized_keys" with correct permissions (600)
-- [ ] **DGXC-05**: Create "/etc/sudoers.d/dgxc" with "dgxc ALL=(ALL) NOPASSWD: ALL"
-- [ ] **DGXC-06**: Validate sudoers syntax with `visudo -c` before installing
-- [ ] **DGXC-07**: Set correct permissions on sudoers.d file (440)
-- [ ] **DGXC-08**: Configure LazyVim for "dgxc" user with starter template
+- [x] **DGXC-01**: Create "dgxc" user if not exists using `adduser`
+- [x] **DGXC-02**: Set random password for "dgxc" user (displayed once at creation)
+- [x] **DGXC-03**: Create "/home/dgxc/.ssh" directory with correct permissions (700)
+- [x] **DGXC-04**: Add SSH public key to "/home/dgxc/.ssh/authorized_keys" with correct permissions (600)
+- [x] **DGXC-05**: Create "/etc/sudoers.d/dgxc" with "dgxc ALL=(ALL) NOPASSWD: ALL"
+- [x] **DGXC-06**: Validate sudoers syntax with `visudo -c` before installing
+- [x] **DGXC-07**: Set correct permissions on sudoers.d file (440)
+- [x] **DGXC-08**: Configure LazyVim for "dgxc" user with starter template
 
 ### Future v2+ Requirements (Not Implemented)
 
@@ -126,14 +126,14 @@
 | DEV-06 | Phase 4 | Complete |
 | DEV-07 | Phase 4 | Complete |
 | DEV-08 | Phase 4 | Complete |
-| DGXC-01 | Phase 5 | Pending |
-| DGXC-02 | Phase 5 | Pending |
-| DGXC-03 | Phase 5 | Pending |
-| DGXC-04 | Phase 5 | Pending |
-| DGXC-05 | Phase 5 | Pending |
-| DGXC-06 | Phase 5 | Pending |
-| DGXC-07 | Phase 5 | Pending |
-| DGXC-08 | Phase 5 | Pending |
+| DGXC-01 | Phase 5 | Complete |
+| DGXC-02 | Phase 5 | Complete |
+| DGXC-03 | Phase 5 | Complete |
+| DGXC-04 | Phase 5 | Complete |
+| DGXC-05 | Phase 5 | Complete |
+| DGXC-06 | Phase 5 | Complete |
+| DGXC-07 | Phase 5 | Complete |
+| DGXC-08 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 19 total (4 CORE + 3 SYS + 8 USER + 4 SUDO) - All Complete ✓
