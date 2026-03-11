@@ -23,7 +23,7 @@ source "${SCRIPT_DIR}/../../lib/user.sh"
 readonly BRYAN_SSH_KEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKt9pdXZ/aI31oyRrCc7ER8pfTOcS3r04xVnEOmEjhss bryan@bryarchy"
 
 # Bryan's mobile Ed25519 SSH public key
-readonly BRYAN_MOBILE_SSH_KEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDKj0wr8mqZE9JuFvE9EE+1qsYZ/n8d0sKPAp4TWrCxY bryan-mobile"
+readonly BRYAN_MOBILE_SSH_KEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINBh8/0u6pF/gTaSBkNYBXpGDPG1pODse1EX5hAkOw1l bryan-mobile"
 
 # ============================================================================
 # Main Execution
