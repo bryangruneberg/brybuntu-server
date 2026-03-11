@@ -10,18 +10,30 @@ New Ubuntu server → SSH-ready development environment in one command, with mod
 
 ## Requirements
 
-### Validated
+### Validated (v2.0 Shipped)
 
-(None yet — ship to validate)
+- Modular script architecture with numbered execution ✓
+- "bryan" user creation with SSH keys and sudo ✓
+- "amazeeio" user creation with SSH keys and sudo ✓
+- Development environment with Node.js, Neovim, LazyVim ✓
 
-### Active
+### Active (v2.1 - Current Milestone)
 
-- [ ] Modular script architecture (numbered files in subdirectories, executed in order)
-- [ ] Early system update and kitty-terminfo installation
-- [ ] "bryan" user creation with sudo privileges and SSH key access
-- [ ] "amazeeio" user creation with sudo privileges and SSH key access
-- [ ] Random password generation for users
-- [ ] Sudoers configuration for passwordless sudo
+- [ ] "dgxc" user creation with same config as bryan/amazeeio
+- [ ] SSH key access for dgxc user
+- [ ] Passwordless sudo for dgxc user
+- [ ] LazyVim configuration for dgxc user
+
+## Current Milestone: v2.1 "DGXC User Addition"
+
+**Goal:** Add a third admin user "dgxc" with identical configuration to bryan and amazeeio.
+
+**Target features:**
+- User creation with home directory and random password
+- SSH key access (Ed25519) - same key pattern as other users
+- Passwordless sudo privileges
+- LazyVim development environment
+- Consistent with existing bryan/amazeeio patterns
 
 ### Out of Scope
 
@@ -48,9 +60,11 @@ SSH key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKt9pdXZ/aI31oyRrCc7ER8pfTOcS3r04xV
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Numbered script execution (10-*.sh, 20-*.sh, etc.) | Clear ordering without complex dependency management | — Pending |
-| Random passwords + SSH keys | Security best practice for automated server setup | — Pending |
-| Passwordless sudo via sudoers.d | Unattended development workflow | — Pending |
+| Numbered script execution (10-*.sh, 20-*.sh, etc.) | Clear ordering without complex dependency management | ✓ Good |
+| Random passwords + SSH keys | Security best practice for automated server setup | ✓ Good |
+| Passwordless sudo via sudoers.d | Unattended development workflow | ✓ Good |
+| Modular library pattern (lib/*.sh) | Reusable functions for user management, sudo, dev tools | ✓ Good |
+| AppImage for Neovim distribution | Easier version management and upgrade path | ✓ Good |
 
 ---
-*Last updated: 2025-03-10 after initialization*
+*Last updated: 2026-03-11 - Starting v2.1 milestone for dgxc user*

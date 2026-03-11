@@ -1,21 +1,21 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: complete
+milestone: v2.1
+milestone_name: dgxc-user-addition
+status: defining-requirements
 last_updated: "2026-03-11T00:00:00.000Z"
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 8
-  completed_plans: 8
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # Brybuntu Server Setup - Project State
 
 **Project:** Brybuntu Server Setup  
 **Core Value:** New Ubuntu server → SSH-ready development environment in one command  
-**Last Updated:** 2026-03-10T21:44:00Z
+**Last Updated:** 2026-03-11
 
 ---
 
@@ -23,14 +23,16 @@ progress:
 
 | Field | Value |
 |-------|-------|
-| **Phase** | 04-development-environment |
-| **Plan** | 02 |
-| **Status** | Complete |
-| **Progress** | `[████████████████████] 100%` |
+| **Phase** | Not started (defining requirements) |
+| **Plan** | — |
+| **Status** | Defining requirements |
+| **Progress** | `[░░░░░░░░░░░░░░░░░░░░] 0%` |
 
 ---
 
 ## Progress Overview
+
+**Previous Milestone v2.0 - COMPLETE ✓**
 
 | Phase | Status | Completion |
 |-------|--------|------------|
@@ -39,19 +41,11 @@ progress:
 | 3. Access Control | ✅ Complete | 100% |
 | 4. Development Environment | ✅ Complete | 100% |
 
-**Overall:** 4/4 phases complete (8 plans done total)
+**Current Milestone v2.1 - IN PROGRESS**
 
----
-
-## Key Metrics
-
-| Metric | Value | Target |
-|--------|-------|--------|
-| Requirements defined | 27 | 27 v1+v2 |
-| Requirements mapped | 27 | 100% |
-| Phases defined | 4 | 4 |
-| Success criteria defined | 26 | 26 (avg 6.5 per phase) |
-| Plans created | 8 | 2 per phase |
+| Phase | Status | Completion |
+|-------|--------|------------|
+| 5. dgxc User Addition | ○ Pending | 0% |
 
 ---
 
@@ -68,13 +62,13 @@ progress:
 | 2026-03-10 | TTY-aware color output | Colors only when interactive, keeps CI logs clean |
 | 2026-03-10 | Natural sort (sort -V) for modules | Ensures 10-*.sh comes after 09-*.sh correctly |
 | 2026-03-10 | DEBIAN_FRONTEND=noninteractive | Prevents interactive prompts during apt operations |
-| 2026-03-10 | dpkg check-before-install | Idempotency via dpkg -l | grep "^ii" pattern |
+| 2026-03-10 | dpkg check-before-install | Idempotency via dpkg -l \| grep "^ii" pattern |
 | 2026-03-10 | adduser over useradd | Better Ubuntu integration, handles home directory |
 | 2026-03-10 | openssl rand -base64 32 | Cryptographically secure password generation |
 | 2026-03-10 | install -d for .ssh | Atomic directory creation with permissions |
 | 2026-03-10 | check-before-append SSH keys | Prevents duplicates on re-runs |
-- [Phase 03-access-control]: Mandatory visudo -c validation before any sudoers file installation
-- [Phase 03-access-control]: Reused bryan-sudo pattern for amazeeio user — Maintains consistency across sudo configuration modules, reduces maintenance burden
+| 2026-03-10 | AppImage for Neovim distribution | Easier version management and upgrade path |
+| 2026-03-11 | User addition follows existing pattern | dgxc user uses same lib/user.sh and lib/sudo.sh as bryan/amazeeio |
 
 ### Technical Notes
 
@@ -82,6 +76,7 @@ progress:
 - **Critical risk:** Sudoers syntax errors can lock out root access - Phase 3 must validate with visudo -c
 - **Idempotency:** All operations must be check-before-create pattern
 - **SSH key:** Ed25519 format specified in PROJECT.md
+- **Development tools:** Node.js v20.x, Opencode CLI, Neovim v0.11.6, LazyVim for both users
 
 ### Blockers
 
@@ -101,29 +96,28 @@ None currently.
 
 | Question | Context | Status |
 |----------|---------|--------|
-| How to test SSH configuration safely? | Phase 3 - risk of lockout | Research flagged in SUMMARY.md |
-| Integration testing strategy? | Validation without VM sprawl | Research flagged in SUMMARY.md |
+| SSH key for dgxc | Same as bryan/amazeeio or unique key? | Pending user input |
+| Mobile SSH key for dgxc | Same pattern as other users? | Pending user input |
 
 ---
 
 ## Session Continuity
 
 ### Last Session Actions
-- Executed 02-01-PLAN.md: Created lib/user.sh and modules/20-users/10-bryan.sh
-- Created user_create_with_ssh() reusable function with idempotency
-- Implemented secure password generation with openssl rand
-- Added SSH key deployment with 700/600 permissions
-- All code passes bash syntax validation
+- Completed v2.0 milestone with all 4 phases done
+- Added Neovim dependencies, texlive, mermaid-cli
+- Generated SSH keys for root, bryan, and amazeeio
 
 ### Next Actions
-1. ✅ All phases complete - consider milestone completion
+1. Define requirements for dgxc user
+2. Create roadmap for Phase 5
+3. Implement dgxc user modules
 
 ### Files of Interest
 - `.planning/PROJECT.md` - Project context and constraints
 - `.planning/REQUIREMENTS.md` - Full requirement specifications
-- `.planning/research/SUMMARY.md` - Research findings and best practices
 - `.planning/ROADMAP.md` - Phase structure and success criteria
 
 ---
 
-*Project state tracked automatically. Last updated: 2026-03-10T21:21:40Z*
+*Project state tracked automatically. Last updated: 2026-03-11*
