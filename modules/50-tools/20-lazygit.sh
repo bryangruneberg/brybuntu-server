@@ -34,8 +34,7 @@ install_dependencies() {
 
 # Get the latest lazygit version from GitHub API
 get_latest_version() {
-    log_info "Fetching latest lazygit version..."
-    
+    # Don't log here - return value would include log messages
     local version
     version=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": *"v\K[^"]*') || die "Failed to fetch latest version"
     
@@ -66,6 +65,7 @@ install_lazygit() {
     cd "$TEMP_DIR" || die "Failed to change to temp directory"
     
     # Get latest version
+    log_info "Fetching latest lazygit version..."
     local version
     version=$(get_latest_version)
     log_info "Latest version: v${version}"
@@ -98,8 +98,11 @@ verify_lazygit() {
         die "lazygit not found in PATH"
     fi
     
-    if [[ ! -x "$LAZYGIT_BIN" ]]; then
-        die "lazygit not executable at $LAZYGIT_BIN"
+    local lazygit_path
+    lazygit_path=$(command -v lazygit)
+    
+    if [[ ! -x "$lazygit_path" ]]; then
+        die "lazygit not executable at $lazygit_path"
     fi
     
     local version
