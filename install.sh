@@ -83,7 +83,7 @@ main() {
     while IFS= read -r script; do
         [[ -n "$script" ]] || continue
         execute_module "$script"
-        ((executed++))
+        ((executed++)) || true
     done < <(discover_modules "$modules_dir")
 
     log_info "========================================"
