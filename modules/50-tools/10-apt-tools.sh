@@ -45,6 +45,7 @@ install_apt_packages() {
     install_package "luarocks"
     install_package "imagemagick"
     install_package "fd-find"
+    install_package "kitty"
     
     log_info "All apt packages installed successfully"
 }
