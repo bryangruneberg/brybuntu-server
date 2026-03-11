@@ -1,11 +1,11 @@
 ---
 gsd_state_version: 1.0
-milestone: v0.11
-milestone_name: milestone
-status: unknown
-last_updated: "2026-03-11T21:08:09.412Z"
+milestone: v2.2
+milestone_name: Docker Development Environment
+status: roadmap_created
+last_updated: "2026-03-11T21:30:00.000Z"
 progress:
-  total_phases: 5
+  total_phases: 8
   completed_phases: 5
   total_plans: 9
   completed_plans: 9
@@ -23,17 +23,17 @@ progress:
 
 | Field | Value |
 |-------|-------|
-| **Phase** | Not started (defining requirements) |
+| **Phase** | Not started (roadmap created) |
 | **Plan** | — |
-| **Status** | Defining requirements for v2.2 |
-| **Progress** | `[○○○○○○○○○○○○○○○○○○○○] 0%` |
+| **Status** | Roadmap created for v2.2, awaiting planning |
+| **Progress** | `[█████░░░░░░░░░░░░░] 28%` |
 | **Milestone** | v2.2 Docker Development Environment |
 
 ---
 
 ## Progress Overview
 
-**Previous Milestone v2.0 - COMPLETE ✓**
+**Previous Milestone v2.1 - COMPLETE ✓**
 
 | Phase | Status | Completion |
 |-------|--------|------------|
@@ -41,12 +41,31 @@ progress:
 | 2. User Management | ✅ Complete | 100% |
 | 3. Access Control | ✅ Complete | 100% |
 | 4. Development Environment | ✅ Complete | 100% |
+| 5. dgxc User Addition | ✅ Complete | 100% |
 
-**Current Milestone v2.1 - IN PROGRESS**
+**Current Milestone v2.2 - IN PROGRESS**
 
 | Phase | Status | Completion |
 |-------|--------|------------|
-| 5. dgxc User Addition | ✅ Complete | 100% |
+| 6. Docker Core | 🔄 Roadmap ready | 0% |
+| 7. Container Management Tools | 🔄 Roadmap ready | 0% |
+| 8. Build & Analysis Tools | 🔄 Roadmap ready | 0% |
+
+---
+
+## Milestone v2.2 Details
+
+**Goal:** Add Docker containerization platform with development tooling for all three admin users
+
+**Target Features:**
+- Docker Engine and Compose for container orchestration
+- lazydocker TUI for interactive container management
+- ctop for container resource monitoring
+- dive for image layer analysis
+- BuildKit/buildx for advanced builds
+- hadolint for Dockerfile linting
+
+**Requirements:** 12 total, all mapped to phases
 
 ---
 
@@ -70,52 +89,34 @@ progress:
 | 2026-03-10 | check-before-append SSH keys | Prevents duplicates on re-runs |
 | 2026-03-10 | AppImage for Neovim distribution | Easier version management and upgrade path |
 | 2026-03-11 | User addition follows existing pattern | dgxc user uses same lib/user.sh and lib/sudo.sh as bryan/amazeeio |
-- [Phase 05-dgxc-user-addition]: Used existing library functions for consistency — Maintains code reuse and ensures correct behavior through well-tested library functions
 
-### Technical Notes
+### Technical Notes (v2.2)
 
+- **Phase 6:** Will install Docker Engine following official Docker apt repository pattern (not Ubuntu snap)
+- **Phase 7:** lazydocker and ctop will be installed as binaries from GitHub releases (consistent with current tool installation pattern)
+- **Phase 8:** hadolint available as standalone binary, BuildKit enabled via daemon configuration
 - **Architecture:** Modular bash with numbered script execution (10-system/, 20-users/ pattern)
-- **Critical risk:** Sudoers syntax errors can lock out root access - Phase 3 must validate with visudo -c
 - **Idempotency:** All operations must be check-before-create pattern
-- **SSH key:** Ed25519 format specified in PROJECT.md
-- **Development tools:** Node.js v20.x, Opencode CLI, Neovim v0.11.6, LazyVim for both users
 
 ### Blockers
 
 None currently.
-
-### Quick Tasks Completed
-
-| # | Description | Date | Commit | Directory |
-|---|-------------|------|--------|-----------|
-| 1 | add mobile SSH key to both users | 2026-03-11 | a716b07 | [1-add-mobile-ssh-key-to-both-users](./quick/1-add-mobile-ssh-key-to-both-users/) |
-| 2 | Install Neovim dependencies: ripgrep, build-essential, luarocks, imagemagick, lazygit, fd-find | 2026-03-11 | 0e2bbb9 | [2-install-neovim-dependencies-ripgrep-buil](./quick/2-install-neovim-dependencies-ripgrep-buil/) |
-| 3 | Install texlive packages and mermaid-cli | 2026-03-11 | fe6934d | [3-install-texlive-packages-and-mermaid-cli](./quick/3-install-texlive-packages-and-mermaid-cli/) |
-| 4 | Generate SSH keys for root, bryan, and amazeeio (ed25519, no passphrase) | 2026-03-11 | dfaaca3 | [4-generate-ssh-keys-for-root-bryan-and-ama](./quick/4-generate-ssh-keys-for-root-bryan-and-ama/) |
-| 5 | Display SSH public keys and install gh CLI and Google CLI | 2026-03-11 | TBD | [5-display-ssh-public-keys-and-install-gh-c](./quick/5-display-ssh-public-keys-and-install-gh-c/) |
-
-### Open Questions
-
-| Question | Context | Status |
-|----------|---------|--------|
-| SSH key for dgxc | Same as bryan/amazeeio | Resolved: Use same key pattern |
-| Mobile SSH key for dgxc | Same pattern as other users | Resolved: Use workstation key only (no mobile key for dgxc) |
 
 ---
 
 ## Session Continuity
 
 ### Last Session Actions
-- Completed v2.0 milestone with all 4 phases done
-- Added Neovim dependencies, texlive, mermaid-cli
-- Generated SSH keys for root, bryan, and amazeeio
+- Completed v2.1 milestone with all 5 phases done
+- Defined requirements for v2.2 Docker Development Environment
+- Created roadmap for Phases 6-8
 
 ### Next Actions
-1. Define requirements for Docker tooling ✓
-2. Create roadmap for Phases 6-8
-3. Plan Phase 6 (Docker Core)
-4. Plan Phase 7 (Container Management)
-5. Plan Phase 8 (Build & Analysis Tools)
+1. ✅ Define requirements for Docker tooling
+2. ✅ Create roadmap for Phases 6-8
+3. ⏳ Plan Phase 6 (Docker Core)
+4. ⏳ Plan Phase 7 (Container Management)
+5. ⏳ Plan Phase 8 (Build & Analysis Tools)
 
 ### Files of Interest
 - `.planning/PROJECT.md` - Project context and constraints
@@ -124,4 +125,4 @@ None currently.
 
 ---
 
-*Project state tracked automatically. Last updated: 2026-03-11 - Milestone v2.2 initialized, requirements defined*
+*Project state tracked automatically. Last updated: 2026-03-11 - Roadmap created for v2.2*

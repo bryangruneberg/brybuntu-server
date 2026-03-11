@@ -88,5 +88,18 @@
 
 ---
 
+## Phase Mappings
+
+### Phase 6: Docker Core
+Requirements: DOCK-01, DOCK-02, DOCK-03, DOCK-04, DOCK-05
+
+### Phase 7: Container Management Tools
+Requirements: LAZY-01, LAZY-02, CTOP-01, CTOP-02
+
+### Phase 8: Build & Analysis Tools
+Requirements: DIVE-01, DIVE-02, BUILD-01, BUILD-02, LINT-01, LINT-02
+
+---
+
 *Requirements defined: 2026-03-11*
-*Last updated: 2026-03-11 after milestone v2.2 initialization*
+*Last updated: 2026-03-11 after roadmap creation for v2.2*
