@@ -84,7 +84,7 @@ main() {
         [[ -n "$script" ]] || continue
         execute_module "$script"
         ((executed++))
-    done <<< "$modules"
+    done < <(discover_modules "$modules_dir")
 
     log_info "========================================"
     log_info "Setup complete! Executed $executed module(s)"
