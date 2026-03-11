@@ -406,6 +406,7 @@ Execute quick task ${next_num}.
 - Commit each task atomically
 - Create summary at: ${QUICK_DIR}/${next_num}-SUMMARY.md
 - Do NOT update ROADMAP.md (quick tasks are separate from planned phases)
+- **CRITICAL:** Check AGENTS.md and CLAUDE.md for any execution restrictions. If this is a server provisioning project (like Brybuntu), DO NOT run installation scripts on the development machine - only validate syntax with `bash -n`.
 </constraints>
 ",
   subagent_type="gsd-executor",

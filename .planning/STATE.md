@@ -95,6 +95,7 @@ None currently.
 | 2 | Install Neovim dependencies: ripgrep, build-essential, luarocks, imagemagick, lazygit, fd-find | 2026-03-11 | 0e2bbb9 | [2-install-neovim-dependencies-ripgrep-buil](./quick/2-install-neovim-dependencies-ripgrep-buil/) |
 | 3 | Install texlive packages and mermaid-cli | 2026-03-11 | fe6934d | [3-install-texlive-packages-and-mermaid-cli](./quick/3-install-texlive-packages-and-mermaid-cli/) |
 | 4 | Generate SSH keys for root, bryan, and amazeeio (ed25519, no passphrase) | 2026-03-11 | dfaaca3 | [4-generate-ssh-keys-for-root-bryan-and-ama](./quick/4-generate-ssh-keys-for-root-bryan-and-ama/) |
+| 5 | Display SSH public keys and install gh CLI and Google CLI | 2026-03-11 | TBD | [5-display-ssh-public-keys-and-install-gh-c](./quick/5-display-ssh-public-keys-and-install-gh-c/) |
 
 ### Open Questions
 
