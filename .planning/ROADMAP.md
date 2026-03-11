@@ -12,7 +12,7 @@
 - [x] **Phase 2: User Management** - Create bryan and amazeeio users with SSH keys and secure passwords (completed 2026-03-10)
 - [x] **Phase 3: Access Control** - Configure passwordless sudo with validated syntax and correct permissions (completed 2026-03-10)
 - [x] **Phase 4: Development Environment** - Install Node.js, Opencode CLI, Neovim, and LazyVim for both users ✓ Complete
-- [ ] **Phase 5: dgxc User Addition** - Create third admin user with identical configuration to bryan/amazeeio
+- [x] **Phase 5: dgxc User Addition** - Create third admin user with identical configuration to bryan/amazeeio (completed 2026-03-11)
 
 ---
 
@@ -24,7 +24,7 @@
 | 2. User Management | 2/2 | Complete    | 2026-03-10 |
 | 3. Access Control | 2/2 | Complete    | 2026-03-10 |
 | 4. Development Environment | 2/2 | Complete | 2026-03-10 |
-| 5. dgxc User Addition | 0/1 | Not Started | — |
+| 5. dgxc User Addition | 1/1 | Complete   | 2026-03-11 |
 
 ---
 
@@ -194,10 +194,10 @@ Each phase's success criteria are:
 5. **SSH directories have correct permissions** - `/home/dgxc/.ssh` is mode 700, `authorized_keys` is mode 600
 6. **LazyVim is configured for dgxc** - `~dgxc/.config/nvim/` exists with starter config, Neovim loads LazyVim on first run
 
-**Plans:** 0/1 plans complete
+**Plans:** 1/1 plans complete ✓
 
 Plans:
-- [ ] `05-01-PLAN.md` — Create dgxc user module, sudo configuration, and LazyVim setup (modules/20-users/15-dgxc.sh, modules/30-sudo/15-dgxc-sudo.sh, modules/40-dev/45-dgxc-lazyvim.sh)
+- [x] `05-01-PLAN.md` — Create dgxc user module, sudo configuration, and LazyVim setup (modules/20-users/15-dgxc.sh, modules/30-sudo/15-dgxc-sudo.sh, modules/40-dev/45-dgxc-lazyvim.sh) ✓ Completed 2026-03-11
 
 ---
 
