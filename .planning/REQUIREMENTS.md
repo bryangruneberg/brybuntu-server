@@ -118,13 +118,29 @@
 | SUDO-02 | Phase 3 | Complete |
 | SUDO-03 | Phase 3 | Complete |
 | SUDO-04 | Phase 3 | Complete |
+| DEV-01 | Phase 4 | Complete |
+| DEV-02 | Phase 4 | Complete |
+| DEV-03 | Phase 4 | Complete |
+| DEV-04 | Phase 4 | Complete |
+| DEV-05 | Phase 4 | Complete |
+| DEV-06 | Phase 4 | Complete |
+| DEV-07 | Phase 4 | Complete |
+| DEV-08 | Phase 4 | Complete |
+| DGXC-01 | Phase 5 | Pending |
+| DGXC-02 | Phase 5 | Pending |
+| DGXC-03 | Phase 5 | Pending |
+| DGXC-04 | Phase 5 | Pending |
+| DGXC-05 | Phase 5 | Pending |
+| DGXC-06 | Phase 5 | Pending |
+| DGXC-07 | Phase 5 | Pending |
+| DGXC-08 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 19 total (4 CORE + 3 SYS + 8 USER + 4 SUDO) - All Complete ✓
 - v2.0 requirements: 8 total (8 DEV) - All Complete ✓
-- v2.1 requirements: 8 total (8 DGXC) - Not yet mapped
+- v2.1 requirements: 8 total (8 DGXC) - Mapped to Phase 5 ✓
 - Total: 35/35 (27 complete + 8 pending)
-- Unmapped: 8 (v2.1 requirements pending roadmap creation) ⚠️
+- Unmapped: 0 ✓
 
 ### Phase Mapping Summary
 
@@ -134,7 +150,7 @@
 | Phase 2: User Management | USER-01..08 | 8 | ✅ Complete |
 | Phase 3: Access Control | SUDO-01..04 | 4 | ✅ Complete |
 | Phase 4: Development Environment | DEV-01..08 | 8 | ✅ Complete |
-| Phase 5: dgxc User Addition | DGXC-01..08 | 8 | ○ Pending |
+| Phase 5: dgxc User Addition | DGXC-01..08 | 8 | 🔄 Ready to plan |
 
 ---
 *Requirements defined: 2025-03-10*

@@ -11,6 +11,8 @@
 - [x] **Phase 1: Core Infrastructure** - Build execution framework with orchestrator, shared libraries, and idempotent system updates ✓ Complete
 - [x] **Phase 2: User Management** - Create bryan and amazeeio users with SSH keys and secure passwords (completed 2026-03-10)
 - [x] **Phase 3: Access Control** - Configure passwordless sudo with validated syntax and correct permissions (completed 2026-03-10)
+- [x] **Phase 4: Development Environment** - Install Node.js, Opencode CLI, Neovim, and LazyVim for both users ✓ Complete
+- [ ] **Phase 5: dgxc User Addition** - Create third admin user with identical configuration to bryan/amazeeio
 
 ---
 
@@ -21,6 +23,8 @@
 | 1. Core Infrastructure | 2/2 | Complete    | 2026-03-10 |
 | 2. User Management | 2/2 | Complete    | 2026-03-10 |
 | 3. Access Control | 2/2 | Complete    | 2026-03-10 |
+| 4. Development Environment | 2/2 | Complete | 2026-03-10 |
+| 5. dgxc User Addition | 0/1 | Not Started | — |
 
 ---
 
@@ -173,4 +177,86 @@ Each phase's success criteria are:
 
 ---
 
-*Last updated: 2026-03-10 - Updated phases 2-3 to complete, added Phase 4*
+### Phase 5: dgxc User Addition
+
+**Goal:** Create a third admin user "dgxc" with identical configuration to bryan and amazeeio, enabling SSH access with passwordless sudo and LazyVim development environment.
+
+**Depends on:** Phase 4 (development environment libraries must exist)
+
+**Requirements:** DGXC-01, DGXC-02, DGXC-03, DGXC-04, DGXC-05, DGXC-06, DGXC-07, DGXC-08
+
+**Success Criteria** (what must be TRUE):
+
+1. **dgxc user exists with home directory** - `id dgxc` returns user info, `/home/dgxc/` exists
+2. **dgxc user has SSH key access** - SSH connection as dgxc@server succeeds using Ed25519 key without password
+3. **dgxc user has random password** - Password was generated and displayed during creation (stored securely)
+4. **dgxc has passwordless sudo access** - Running `sudo whoami` as dgxc returns "root" without password prompt
+5. **SSH directories have correct permissions** - `/home/dgxc/.ssh` is mode 700, `authorized_keys` is mode 600
+6. **LazyVim is configured for dgxc** - `~dgxc/.config/nvim/` exists with starter config, Neovim loads LazyVim on first run
+
+**Plans:** 0/1 plans complete
+
+Plans:
+- [ ] `05-01-PLAN.md` — Create dgxc user module, sudo configuration, and LazyVim setup (modules/20-users/15-dgxc.sh, modules/30-sudo/15-dgxc-sudo.sh, modules/40-dev/45-dgxc-lazyvim.sh)
+
+---
+
+## Requirement Coverage
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| CORE-01 | Phase 1 | Complete |
+| CORE-02 | Phase 1 | Complete |
+| CORE-03 | Phase 1 | Complete |
+| CORE-04 | Phase 1 | Complete |
+| SYS-01 | Phase 1 | Complete |
+| SYS-02 | Phase 1 | Complete |
+| SYS-03 | Phase 1 | Complete |
+| USER-01 | Phase 2 | Complete |
+| USER-02 | Phase 2 | Complete |
+| USER-03 | Phase 2 | Complete |
+| USER-04 | Phase 2 | Complete |
+| USER-05 | Phase 2 | Complete |
+| USER-06 | Phase 2 | Complete |
+| USER-07 | Phase 2 | Complete |
+| USER-08 | Phase 2 | Complete |
+| SUDO-01 | Phase 3 | Complete |
+| SUDO-02 | Phase 3 | Complete |
+| SUDO-03 | Phase 3 | Complete |
+| SUDO-04 | Phase 3 | Complete |
+| DEV-01 | Phase 4 | Complete |
+| DEV-02 | Phase 4 | Complete |
+| DEV-03 | Phase 4 | Complete |
+| DEV-04 | Phase 4 | Complete |
+| DEV-05 | Phase 4 | Complete |
+| DEV-06 | Phase 4 | Complete |
+| DEV-07 | Phase 4 | Complete |
+| DEV-08 | Phase 4 | Complete |
+| DGXC-01 | Phase 5 | Pending |
+| DGXC-02 | Phase 5 | Pending |
+| DGXC-03 | Phase 5 | Pending |
+| DGXC-04 | Phase 5 | Pending |
+| DGXC-05 | Phase 5 | Pending |
+| DGXC-06 | Phase 5 | Pending |
+| DGXC-07 | Phase 5 | Pending |
+| DGXC-08 | Phase 5 | Pending |
+
+**Coverage:** 35/35 total requirements mapped (27 complete + 8 pending) ✓
+
+---
+
+## Dependencies
+
+```
+Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5
+```
+
+**Dependency rationale:**
+- Phase 2 requires Phase 1 because user creation scripts depend on shared libraries and logging
+- Phase 3 requires Phase 2 because sudo configuration requires users to exist
+- Phase 4 requires Phase 3 because development tools installation requires sudo access
+- Phase 5 requires Phase 4 because LazyVim configuration depends on development libraries and Neovim installation
+
+---
+
+*Last updated: 2026-03-11 - Added Phase 5 for dgxc user addition milestone*
