@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v2.2
 milestone_name: Docker Development Environment
 status: unknown
-last_updated: "2026-03-11T22:02:31.537Z"
+last_updated: "2026-03-11T22:06:28.934Z"
 progress:
   total_phases: 8
-  completed_phases: 5
+  completed_phases: 6
   total_plans: 12
-  completed_plans: 10
+  completed_plans: 12
 ---
 
 # Brybuntu Server Setup - Project State
@@ -90,6 +90,7 @@ progress:
 | 2026-03-10 | AppImage for Neovim distribution | Easier version management and upgrade path |
 | 2026-03-11 | User addition follows existing pattern | dgxc user uses same lib/user.sh and lib/sudo.sh as bryan/amazeeio |
 - [Phase 06-docker-core]: Use official Docker apt repository instead of Ubuntu universe — Official repository provides latest Docker version and follows Docker documentation
+- [Phase 06-docker-core]: Use systemctl enable --now docker to enable auto-start and start immediately — Use systemctl enable --now docker to enable auto-start and start immediately
 
 ### Technical Notes (v2.2)
 
