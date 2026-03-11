@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v2.2
 milestone_name: Docker Development Environment
-status: roadmap_created
-last_updated: "2026-03-11T21:30:00.000Z"
+status: unknown
+last_updated: "2026-03-11T22:02:31.537Z"
 progress:
   total_phases: 8
   completed_phases: 5
-  total_plans: 9
-  completed_plans: 9
+  total_plans: 12
+  completed_plans: 10
 ---
 
 # Brybuntu Server Setup - Project State
@@ -89,6 +89,7 @@ progress:
 | 2026-03-10 | check-before-append SSH keys | Prevents duplicates on re-runs |
 | 2026-03-10 | AppImage for Neovim distribution | Easier version management and upgrade path |
 | 2026-03-11 | User addition follows existing pattern | dgxc user uses same lib/user.sh and lib/sudo.sh as bryan/amazeeio |
+- [Phase 06-docker-core]: Use official Docker apt repository instead of Ubuntu universe — Official repository provides latest Docker version and follows Docker documentation
 
 ### Technical Notes (v2.2)
 

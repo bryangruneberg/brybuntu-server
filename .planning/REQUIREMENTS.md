@@ -9,8 +9,8 @@
 
 ### Docker Core
 
-- [ ] **DOCK-01**: Docker Engine installed and daemon running
-- [ ] **DOCK-02**: Docker CLI available for all admin users
+- [x] **DOCK-01**: Docker Engine installed and daemon running
+- [x] **DOCK-02**: Docker CLI available for all admin users
 - [ ] **DOCK-03**: Docker Compose plugin installed
 - [ ] **DOCK-04**: All admin users added to docker group for non-root access
 - [ ] **DOCK-05**: Docker daemon starts automatically on boot
@@ -65,8 +65,8 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DOCK-01 | Phase 6 | Pending |
-| DOCK-02 | Phase 6 | Pending |
+| DOCK-01 | Phase 6 | Complete |
+| DOCK-02 | Phase 6 | Complete |
 | DOCK-03 | Phase 6 | Pending |
 | DOCK-04 | Phase 6 | Pending |
 | DOCK-05 | Phase 6 | Pending |
