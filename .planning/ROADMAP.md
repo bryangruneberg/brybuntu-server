@@ -19,8 +19,8 @@
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Core Infrastructure | 2/2 | Complete    | 2026-03-10 |
-| 2. User Management | 0/2 | Complete    | 2026-03-10 |
-| 3. Access Control | 0/2 | Complete    | 2026-03-10 |
+| 2. User Management | 2/2 | Complete    | 2026-03-10 |
+| 3. Access Control | 2/2 | Complete    | 2026-03-10 |
 
 ---
 
@@ -69,8 +69,8 @@ Plans:
 **Plans:** 2/2 plans complete
 
 Plans:
-- [ ] `02-01-PLAN.md` — Create user library (lib/user.sh) and bryan user module (modules/20-users/10-bryan.sh)
-- [ ] `02-02-PLAN.md` — Create amazeeio user module and test infrastructure (tests/test_user_management.bats)
+- [x] `02-01-PLAN.md` — Create user library (lib/user.sh) and bryan user module (modules/20-users/10-bryan.sh) ✓ Completed 2026-03-10
+- [x] `02-02-PLAN.md` — Create amazeeio user module and test infrastructure (tests/test_user_management.bats) ✓ Completed 2026-03-10
 
 ---
 
@@ -93,8 +93,8 @@ Plans:
 **Plans:** 2/2 plans complete
 
 Plans:
-- [ ] `03-01-PLAN.md` — Create sudo library (lib/sudo.sh) and bryan sudoers module (modules/30-sudo/10-bryan-sudo.sh)
-- [ ] `03-02-PLAN.md` — Create amazeeio sudoers module (modules/30-sudo/20-amazeeio-sudo.sh)
+- [x] `03-01-PLAN.md` — Create sudo library (lib/sudo.sh) and bryan sudoers module (modules/30-sudo/10-bryan-sudo.sh) ✓ Completed 2026-03-10
+- [x] `03-02-PLAN.md` — Create amazeeio sudoers module (modules/30-sudo/20-amazeeio-sudo.sh) ✓ Completed 2026-03-10
 
 ---
 
@@ -138,6 +138,32 @@ Phase 1 → Phase 2 → Phase 3
 
 ---
 
+### Phase 4: Development Environment
+
+**Goal:** Install modern development tools (Node.js, Opencode CLI, Neovim, LazyVim) for both admin users.
+
+**Depends on:** Phase 3
+
+**Requirements:** DEV-01, DEV-02, DEV-03, DEV-04, DEV-05, DEV-06, DEV-07, DEV-08
+
+**Success Criteria** (what must be TRUE):
+
+1. **Node.js LTS installed system-wide** - `node --version` returns v20.x or later
+2. **Opencode CLI installed globally** - `opencode --version` works for all users
+3. **Neovim v0.11.6 installed** - `nvim --version` shows correct version
+4. **LazyVim configured for bryan** - `~bryan/.config/nvim/` exists with starter config
+5. **LazyVim configured for amazeeio** - `~amazeeio/.config/nvim/` exists with starter config
+6. **Idempotent installations** - Re-running install.sh doesn't create duplicates
+7. **Proper permissions** - All configs owned by respective users
+
+**Plans:** 2/2 plans complete
+
+Plans:
+- [x] `04-01-PLAN.md` — Install Node.js LTS and Opencode CLI (modules/40-dev/10-node.sh, 20-opencode.sh) ✓ Completed 2026-03-10
+- [x] `04-02-PLAN.md` — Install Neovim and LazyVim for both users (modules/40-dev/30-neovim.sh, 40-lazyvim.sh) ✓ Completed 2026-03-10
+
+---
+
 ## Success Criteria Validation
 
 Each phase's success criteria are:
@@ -147,4 +173,4 @@ Each phase's success criteria are:
 
 ---
 
-*Last updated: 2025-03-10 after roadmap revision - firewall removed (handled at infrastructure level)*
+*Last updated: 2026-03-10 - Updated phases 2-3 to complete, added Phase 4*
