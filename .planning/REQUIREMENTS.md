@@ -1,157 +1,92 @@
-# Requirements: Brybuntu Server Setup
+# Requirements: Brybuntu Server Setup — v2.2 Docker Development Environment
 
-**Defined:** 2025-03-10
-**Core Value:** New Ubuntu server → SSH-ready development environment in one command, with modular components
+**Defined:** 2026-03-11
+**Core Value:** New Ubuntu server → SSH-ready development environment in one command, now with Docker containerization
 
-## v1 Requirements
+---
 
-### Core Infrastructure
+## v2.2 Requirements
 
-- [x] **CORE-01**: Modular script architecture with numbered execution (10-*.sh, 20-*.sh, etc.)
-- [x] **CORE-02**: Main orchestrator script that discovers and executes modules in order
-- [x] **CORE-03**: Shared library for common functions (logging, error handling, idempotency checks)
-- [x] **CORE-04**: Idempotent operations (safe to re-run without errors)
+### Docker Core
 
-### System Setup
+- [ ] **DOCK-01**: Docker Engine installed and daemon running
+- [ ] **DOCK-02**: Docker CLI available for all admin users
+- [ ] **DOCK-03**: Docker Compose plugin installed
+- [ ] **DOCK-04**: All admin users added to docker group for non-root access
+- [ ] **DOCK-05**: Docker daemon starts automatically on boot
 
-- [x] **SYS-01**: Run `apt update` before any package operations
-- [x] **SYS-02**: Install kitty-terminfo package
-- [x] **SYS-03**: Error handling with explicit checks (not relying solely on `set -e`)
+### Container Management Tools
 
-### User Management
+- [ ] **LAZY-01**: lazydocker installed and available in PATH
+- [ ] **LAZY-02**: lazydocker can connect to local Docker daemon
+- [ ] **CTOP-01**: ctop installed for container resource monitoring
+- [ ] **CTOP-02**: ctop displays running containers with CPU/memory metrics
 
-- [x] **USER-01**: Create "bryan" user if not exists using `adduser`
-- [x] **USER-02**: Set random password for "bryan" user
-- [x] **USER-03**: Create "/home/bryan/.ssh" directory with correct permissions (700)
-- [x] **USER-04**: Add SSH public key to "/home/bryan/.ssh/authorized_keys" with correct permissions (600)
-- [x] **USER-05**: Create "amazeeio" user if not exists using `adduser`
-- [x] **USER-06**: Set random password for "amazeeio" user
-- [x] **USER-07**: Create "/home/amazeeio/.ssh" directory with correct permissions (700)
-- [x] **USER-08**: Add SSH public key to "/home/amazeeio/.ssh/authorized_keys" with correct permissions (600)
+### Build & Analysis Tools
 
-### Privilege Configuration
+- [ ] **DIVE-01**: dive installed for image layer analysis
+- [ ] **DIVE-02**: dive can analyze local and remote images
+- [ ] **BUILD-01**: BuildKit enabled by default
+- [ ] **BUILD-02**: docker buildx plugin available
+- [ ] **LINT-01**: hadolint installed for Dockerfile linting
+- [ ] **LINT-02**: hadolint integrates with editor/CI workflows
 
-- [x] **SUDO-01**: Create "/etc/sudoers.d/bryan" with "bryan ALL=(ALL) NOPASSWD: ALL"
-- [x] **SUDO-02**: Create "/etc/sudoers.d/amazeeio" with "amazeeio ALL=(ALL) NOPASSWD: ALL"
-- [x] **SUDO-03**: Validate sudoers syntax with `visudo -c` before installing
-- [x] **SUDO-04**: Set correct permissions on sudoers.d files (440)
+---
 
-## v2 Requirements (Completed)
+## v3.0 Requirements (Future)
 
-### Development Environment
+### Security & Registry
 
-- [x] **DEV-01**: Install Node.js LTS (v20.x or later) system-wide
-- [x] **DEV-02**: Install Opencode CLI globally via npm
-- [x] **DEV-03**: Install Neovim v0.11.6 via AppImage extraction
-- [x] **DEV-04**: Create development library (lib/dev.sh) with reusable functions
-- [x] **DEV-05**: Configure LazyVim for "bryan" user with starter template
-- [x] **DEV-06**: Configure LazyVim for "amazeeio" user with starter template
-- [x] **DEV-07**: Set correct ownership on all Neovim configurations
-- [x] **DEV-08**: Ensure idempotent installations (no duplicates on re-run)
+- **TRIV-01**: trivy installed for image vulnerability scanning
+- **SKOP-01**: skopeo for image copying between registries
+- **REGCTL-01**: regctl for registry operations
 
-## v2.1 Requirements (Active - Current Milestone)
+### Orchestration
 
-### dgxc User Addition
+- **KUBE-01**: kubectl for Kubernetes cluster management
+- **K9S-01**: k9s TUI for Kubernetes
+- **HELM-01**: helm for Kubernetes package management
 
-- [x] **DGXC-01**: Create "dgxc" user if not exists using `adduser`
-- [x] **DGXC-02**: Set random password for "dgxc" user (displayed once at creation)
-- [x] **DGXC-03**: Create "/home/dgxc/.ssh" directory with correct permissions (700)
-- [x] **DGXC-04**: Add SSH public key to "/home/dgxc/.ssh/authorized_keys" with correct permissions (600)
-- [x] **DGXC-05**: Create "/etc/sudoers.d/dgxc" with "dgxc ALL=(ALL) NOPASSWD: ALL"
-- [x] **DGXC-06**: Validate sudoers syntax with `visudo -c` before installing
-- [x] **DGXC-07**: Set correct permissions on sudoers.d file (440)
-- [x] **DGXC-08**: Configure LazyVim for "dgxc" user with starter template
-
-### Future v2+ Requirements (Not Implemented)
-
-#### SSH Hardening
-
-- **SSH-01**: Disable password authentication
-- **SSH-02**: Enforce Ed25519 key type
-- **SSH-03**: Change default SSH port (optional)
-- **SSH-04**: Configure fail2ban for brute force protection
-
-#### Additional Components
-
-- **COMP-01**: Docker installation module
-- **COMP-02**: Development tools installation (git, curl, wget, etc.)
-- **COMP-03**: Dotfiles management integration
-
-#### Operational
-
-- **OPS-01**: Dry-run mode (show what would be done without executing)
-- **OPS-02**: Configuration file support (not hardcoded values)
-- **OPS-03**: Rollback capability on failure
-- **OPS-04**: Comprehensive logging to file
+---
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| GUI/desktop environment | SSH-only development server per PROJECT.md |
-| Multi-server orchestration | Use Ansible/Salt for fleet management |
-| Secrets management | Out of scope, use proper secrets manager |
-| Firewall configuration | Handled at infrastructure level, not by this tool |
-| Password SSH authentication | Security anti-pattern, keys only |
-| Cloud-init integration | Tool is for any Ubuntu server, not cloud-specific |
+| Kubernetes cluster setup | Infrastructure scope — this milestone focuses on client tools only |
+| Private registry setup | Not needed for development workflow |
+| Docker Swarm mode | Compose sufficient for local development |
+| GPU support (nvidia-docker) | Hardware-specific, not universally applicable |
+| Rootless Docker | Adds complexity; docker group sufficient for dev environment |
+
+---
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CORE-01 | Phase 1 | Complete |
-| CORE-02 | Phase 1 | Complete |
-| CORE-03 | Phase 1 | Complete |
-| CORE-04 | Phase 1 | Complete |
-| SYS-01 | Phase 1 | Complete |
-| SYS-02 | Phase 1 | Complete |
-| SYS-03 | Phase 1 | Complete |
-| USER-01 | Phase 2 | Complete |
-| USER-02 | Phase 2 | Complete |
-| USER-03 | Phase 2 | Complete |
-| USER-04 | Phase 2 | Complete |
-| USER-05 | Phase 2 | Complete |
-| USER-06 | Phase 2 | Complete |
-| USER-07 | Phase 2 | Complete |
-| USER-08 | Phase 2 | Complete |
-| SUDO-01 | Phase 3 | Complete |
-| SUDO-02 | Phase 3 | Complete |
-| SUDO-03 | Phase 3 | Complete |
-| SUDO-04 | Phase 3 | Complete |
-| DEV-01 | Phase 4 | Complete |
-| DEV-02 | Phase 4 | Complete |
-| DEV-03 | Phase 4 | Complete |
-| DEV-04 | Phase 4 | Complete |
-| DEV-05 | Phase 4 | Complete |
-| DEV-06 | Phase 4 | Complete |
-| DEV-07 | Phase 4 | Complete |
-| DEV-08 | Phase 4 | Complete |
-| DGXC-01 | Phase 5 | Complete |
-| DGXC-02 | Phase 5 | Complete |
-| DGXC-03 | Phase 5 | Complete |
-| DGXC-04 | Phase 5 | Complete |
-| DGXC-05 | Phase 5 | Complete |
-| DGXC-06 | Phase 5 | Complete |
-| DGXC-07 | Phase 5 | Complete |
-| DGXC-08 | Phase 5 | Complete |
+| DOCK-01 | Phase 6 | Pending |
+| DOCK-02 | Phase 6 | Pending |
+| DOCK-03 | Phase 6 | Pending |
+| DOCK-04 | Phase 6 | Pending |
+| DOCK-05 | Phase 6 | Pending |
+| LAZY-01 | Phase 7 | Pending |
+| LAZY-02 | Phase 7 | Pending |
+| CTOP-01 | Phase 7 | Pending |
+| CTOP-02 | Phase 7 | Pending |
+| DIVE-01 | Phase 8 | Pending |
+| DIVE-02 | Phase 8 | Pending |
+| BUILD-01 | Phase 8 | Pending |
+| BUILD-02 | Phase 8 | Pending |
+| LINT-01 | Phase 8 | Pending |
+| LINT-02 | Phase 8 | Pending |
 
 **Coverage:**
-- v1 requirements: 19 total (4 CORE + 3 SYS + 8 USER + 4 SUDO) - All Complete ✓
-- v2.0 requirements: 8 total (8 DEV) - All Complete ✓
-- v2.1 requirements: 8 total (8 DGXC) - Mapped to Phase 5 ✓
-- Total: 35/35 (27 complete + 8 pending)
+- v2.2 requirements: 12 total
+- Mapped to phases: 12
 - Unmapped: 0 ✓
 
-### Phase Mapping Summary
-
-| Phase | Requirements | Count | Status |
-|-------|--------------|-------|--------|
-| Phase 1: Core Infrastructure | CORE-01..04, SYS-01..03 | 7 | ✅ Complete |
-| Phase 2: User Management | USER-01..08 | 8 | ✅ Complete |
-| Phase 3: Access Control | SUDO-01..04 | 4 | ✅ Complete |
-| Phase 4: Development Environment | DEV-01..08 | 8 | ✅ Complete |
-| Phase 5: dgxc User Addition | DGXC-01..08 | 8 | 🔄 Ready to plan |
-
 ---
-*Requirements defined: 2025-03-10*
-*Last updated: 2026-03-11 - Added DGXC requirements for v2.1 milestone*
+
+*Requirements defined: 2026-03-11*
+*Last updated: 2026-03-11 after milestone v2.2 initialization*

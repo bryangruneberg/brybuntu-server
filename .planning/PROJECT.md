@@ -10,6 +10,18 @@ A bash-based automation tool that transforms a fresh Ubuntu 24.04.3 LTS server i
 
 Three admin users (bryan, amazeeio, dgxc) with full SSH access, passwordless sudo, and LazyVim development environment. Includes Node.js, Opencode CLI, Neovim, and essential development tools.
 
+## Current Milestone: v2.2 Docker Development Environment
+
+**Goal:** Add Docker containerization platform with development tooling for all three admin users
+
+**Target features:**
+- Docker Engine and Compose for container orchestration
+- lazydocker TUI for interactive container management
+- ctop for container resource monitoring
+- dive for image layer analysis
+- BuildKit/buildx for advanced builds
+- hadolint for Dockerfile linting
+
 ## Core Value
 
 New Ubuntu server → SSH-ready development environment in one command, with modular components that can be added or removed.
@@ -24,9 +36,21 @@ New Ubuntu server → SSH-ready development environment in one command, with mod
 - ✓ Development environment with Node.js, Neovim, LazyVim — v2.0
 - ✓ "dgxc" user with identical configuration — v2.1
 
-### Active (Next Milestone)
+#### Active (v2.2 In Progress)
 
-(None defined — start next milestone to add requirements)
+- [ ] Docker Engine with daemon configuration
+- [ ] Docker Compose plugin
+- [ ] lazydocker TUI for container management
+- [ ] ctop for container monitoring
+- [ ] dive for image layer analysis
+- [ ] BuildKit/buildx for advanced builds
+- [ ] hadolint for Dockerfile linting
+
+### Future Milestones
+
+- [ ] Additional container security scanning (trivy)
+- [ ] Registry tools (skopeo, regctl)
+- [ ] Kubernetes tooling (kubectl, k9s, helm)
 
 ## Context
 
@@ -54,4 +78,4 @@ New Ubuntu server → SSH-ready development environment in one command, with mod
 | AppImage for Neovim | Easier version management | ✓ Good |
 
 ---
-*Last updated: 2026-03-11 after v2.1 milestone completion*
+*Last updated: 2026-03-11 — Milestone v2.2 Docker Development Environment started*
