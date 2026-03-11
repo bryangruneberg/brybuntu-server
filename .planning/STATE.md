@@ -92,6 +92,7 @@ None currently.
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 1 | add mobile SSH key to both users | 2026-03-11 | a716b07 | [1-add-mobile-ssh-key-to-both-users](./quick/1-add-mobile-ssh-key-to-both-users/) |
+| 2 | Install Neovim dependencies: ripgrep, build-essential, luarocks, imagemagick, lazygit, fd-find | 2026-03-11 | 0e2bbb9 | [2-install-neovim-dependencies-ripgrep-buil](./quick/2-install-neovim-dependencies-ripgrep-buil/) |
 
 ### Open Questions
 
