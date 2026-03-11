@@ -86,6 +86,12 @@ progress:
 
 None currently.
 
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 1 | add mobile SSH key to both users | 2026-03-11 | a716b07 | [1-add-mobile-ssh-key-to-both-users](./quick/1-add-mobile-ssh-key-to-both-users/) |
+
 ### Open Questions
 
 | Question | Context | Status |
