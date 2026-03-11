@@ -49,6 +49,19 @@
 - [x] **DEV-07**: Set correct ownership on all Neovim configurations
 - [x] **DEV-08**: Ensure idempotent installations (no duplicates on re-run)
 
+## v2.1 Requirements (Active - Current Milestone)
+
+### dgxc User Addition
+
+- [ ] **DGXC-01**: Create "dgxc" user if not exists using `adduser`
+- [ ] **DGXC-02**: Set random password for "dgxc" user (displayed once at creation)
+- [ ] **DGXC-03**: Create "/home/dgxc/.ssh" directory with correct permissions (700)
+- [ ] **DGXC-04**: Add SSH public key to "/home/dgxc/.ssh/authorized_keys" with correct permissions (600)
+- [ ] **DGXC-05**: Create "/etc/sudoers.d/dgxc" with "dgxc ALL=(ALL) NOPASSWD: ALL"
+- [ ] **DGXC-06**: Validate sudoers syntax with `visudo -c` before installing
+- [ ] **DGXC-07**: Set correct permissions on sudoers.d file (440)
+- [ ] **DGXC-08**: Configure LazyVim for "dgxc" user with starter template
+
 ### Future v2+ Requirements (Not Implemented)
 
 #### SSH Hardening
@@ -108,9 +121,10 @@
 
 **Coverage:**
 - v1 requirements: 19 total (4 CORE + 3 SYS + 8 USER + 4 SUDO) - All Complete ✓
-- v2 requirements: 8 total (8 DEV) - All Complete ✓
-- Total: 27/27 mapped
-- Unmapped: 0 ✓
+- v2.0 requirements: 8 total (8 DEV) - All Complete ✓
+- v2.1 requirements: 8 total (8 DGXC) - Not yet mapped
+- Total: 35/35 (27 complete + 8 pending)
+- Unmapped: 8 (v2.1 requirements pending roadmap creation) ⚠️
 
 ### Phase Mapping Summary
 
@@ -120,7 +134,8 @@
 | Phase 2: User Management | USER-01..08 | 8 | ✅ Complete |
 | Phase 3: Access Control | SUDO-01..04 | 4 | ✅ Complete |
 | Phase 4: Development Environment | DEV-01..08 | 8 | ✅ Complete |
+| Phase 5: dgxc User Addition | DGXC-01..08 | 8 | ○ Pending |
 
 ---
 *Requirements defined: 2025-03-10*
-*Last updated: 2026-03-11 - All USER requirements marked complete, added DEV requirements for Phase 4*
+*Last updated: 2026-03-11 - Added DGXC requirements for v2.1 milestone*
