@@ -86,7 +86,10 @@
   3. Docker builds use BuildKit by default (DOCKER_BUILDKIT=1)
   4. User can run `hadolint Dockerfile` and see lint results
   5. hadolint can be integrated with editor or CI pipeline
-**Plans**: TBD
+**Plans:** 3 plans (Wave 1: parallel dive + buildkit + hadolint)
+- [ ] 08-01-PLAN.md — Install dive image analyzer from GitHub releases
+- [ ] 08-02-PLAN.md — Configure BuildKit and verify buildx plugin
+- [ ] 08-03-PLAN.md — Install hadolint Dockerfile linter
 
 ---
 
@@ -127,8 +130,8 @@
 | 5. dgxc User Addition | v2.1 | 1/1 | ✅ Complete | 2026-03-11 |
 | 6. Docker Core | v2.2 | 0/3 | Not started | - |
 | 7. Container Management Tools | v2.2 | 0/2 | Planned | - |
-| 8. Build & Analysis Tools | v2.2 | 0/3 | Not started | - |
+| 8. Build & Analysis Tools | v2.2 | 0/3 | Planned | - |
 
 ---
 
-*Last updated: 2026-03-13 after Phase 7 planning complete*
+*Last updated: 2026-03-13 after Phase 8 planning complete*
