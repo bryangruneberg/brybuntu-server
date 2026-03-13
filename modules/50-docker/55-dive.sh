@@ -46,9 +46,26 @@ install_dive() {
     log_info "Creating /opt/dive/ directory..."
     mkdir -p /opt/dive || die "Failed to create /opt/dive/ directory"
 
+    # Query GitHub API to get the latest release version
+    log_info "Querying GitHub API for latest dive version..."
+    local latest_version
+    latest_version=$(curl -s https://api.github.com/repos/wagoodman/dive/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | sed 's/^v//')
+
+    if [[ -z "$latest_version" ]]; then
+        die "Failed to determine latest dive version from GitHub API"
+    fi
+
+    log_info "Latest dive version: v${latest_version}"
+
     # Download latest release from GitHub
     local download_url
-    download_url="https://github.com/wagoodman/dive/releases/latest/download/dive_Linux_${dive_arch}.tar.gz"
+    download_url="https://github.com/wagoodman/dive/releases/download/v${latest_version}/dive_${latest_version}_Linux_${dive_arch}.tar.gz"
+
+    # Validate the download URL exists before attempting download
+    log_info "Validating download URL..."
+    if ! curl -fsSLI "$download_url" -o /dev/null 2>&1; then
+        die "Download URL validation failed: $download_url"
+    fi
 
     local temp_dir
     temp_dir=$(mktemp -d)
