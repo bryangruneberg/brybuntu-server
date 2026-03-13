@@ -72,7 +72,9 @@
   2. lazydocker displays running containers with logs, stats, and controls
   3. User can run `ctop` and see real-time CPU/memory metrics for all containers
   4. ctop shows container resource usage updating in real-time
-**Plans**: TBD
+**Plans:** 2 plans (Wave 1: parallel lazydocker + ctop)
+- [ ] 07-01-PLAN.md — Install lazydocker TUI from GitHub releases
+- [ ] 07-02-PLAN.md — Install ctop container monitoring tool
 
 ### Phase 8: Build & Analysis Tools
 **Goal:** Users can analyze Docker images and validate Dockerfiles with integrated tooling
@@ -124,9 +126,9 @@
 | 4. Development Environment | v2.1 | 2/2 | ✅ Complete | 2026-03-10 |
 | 5. dgxc User Addition | v2.1 | 1/1 | ✅ Complete | 2026-03-11 |
 | 6. Docker Core | v2.2 | 0/3 | Not started | - |
-| 7. Container Management Tools | v2.2 | 0/2 | Not started | - |
+| 7. Container Management Tools | v2.2 | 0/2 | Planned | - |
 | 8. Build & Analysis Tools | v2.2 | 0/3 | Not started | - |
 
 ---
 
-*Last updated: 2026-03-11 after roadmap creation for v2.2*
+*Last updated: 2026-03-13 after Phase 7 planning complete*
