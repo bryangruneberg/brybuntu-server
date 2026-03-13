@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v2.2
 milestone_name: Docker Development Environment
 status: unknown
-last_updated: "2026-03-13T20:48:32.656Z"
+last_updated: "2026-03-13T20:49:05.729Z"
 progress:
   total_phases: 8
-  completed_phases: 6
+  completed_phases: 7
   total_plans: 14
-  completed_plans: 13
+  completed_plans: 14
 ---
 
 # Brybuntu Server Setup - Project State
@@ -91,6 +91,7 @@ progress:
 | 2026-03-11 | User addition follows existing pattern | dgxc user uses same lib/user.sh and lib/sudo.sh as bryan/amazeeio |
 - [Phase 06-docker-core]: Use official Docker apt repository instead of Ubuntu universe — Official repository provides latest Docker version and follows Docker documentation
 - [Phase 06-docker-core]: Use systemctl enable --now docker to enable auto-start and start immediately — Use systemctl enable --now docker to enable auto-start and start immediately
+- [Phase 07-01]: Use GitHub releases URL with 'latest' for lazydocker — Ensures most recent version without hardcoding, follows project's GitHub binary pattern
 
 ### Technical Notes (v2.2)
 
