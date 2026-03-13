@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v2.2
 milestone_name: Docker Development Environment
 status: unknown
-last_updated: "2026-03-13T20:50:33.926Z"
+last_updated: "2026-03-13T21:07:00.722Z"
 progress:
   total_phases: 8
-  completed_phases: 7
-  total_plans: 14
-  completed_plans: 14
+  completed_phases: 8
+  total_plans: 17
+  completed_plans: 17
 ---
 
 # Brybuntu Server Setup - Project State
@@ -92,6 +92,8 @@ progress:
 - [Phase 06-docker-core]: Use official Docker apt repository instead of Ubuntu universe — Official repository provides latest Docker version and follows Docker documentation
 - [Phase 06-docker-core]: Use systemctl enable --now docker to enable auto-start and start immediately — Use systemctl enable --now docker to enable auto-start and start immediately
 - [Phase 07-01]: Use GitHub releases URL with 'latest' for lazydocker — Ensures most recent version without hardcoding, follows project's GitHub binary pattern
+- [Phase 08-build-analysis-tools]: Followed lazydocker pattern exactly for dive module — Consistency across Docker tooling ensures maintainability and predictable behavior
+- [Phase 08-build-analysis-tools]: Direct binary download for hadolint (not tar.gz) — hadolint releases are single binaries unlike lazydocker which distributes tar.gz archives
 
 ### Technical Notes (v2.2)
 

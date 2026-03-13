@@ -24,8 +24,8 @@
 
 ### Build & Analysis Tools
 
-- [ ] **DIVE-01**: dive installed for image layer analysis
-- [ ] **DIVE-02**: dive can analyze local and remote images
+- [x] **DIVE-01**: dive installed for image layer analysis
+- [x] **DIVE-02**: dive can analyze local and remote images
 - [ ] **BUILD-01**: BuildKit enabled by default
 - [ ] **BUILD-02**: docker buildx plugin available
 - [ ] **LINT-01**: hadolint installed for Dockerfile linting
@@ -74,8 +74,8 @@
 | LAZY-02 | Phase 7 | Complete |
 | CTOP-01 | Phase 7 | Complete |
 | CTOP-02 | Phase 7 | Complete |
-| DIVE-01 | Phase 8 | Pending |
-| DIVE-02 | Phase 8 | Pending |
+| DIVE-01 | Phase 8 | Complete |
+| DIVE-02 | Phase 8 | Complete |
 | BUILD-01 | Phase 8 | Pending |
 | BUILD-02 | Phase 8 | Pending |
 | LINT-01 | Phase 8 | Pending |
