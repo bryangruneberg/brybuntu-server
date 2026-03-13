@@ -6,21 +6,9 @@ A bash-based automation tool that transforms a fresh Ubuntu 24.04.3 LTS server i
 
 ## Current State
 
-**Shipped:** v2.1 DGXC User Addition (2026-03-11)
+**Shipped:** v2.2 Docker Development Environment (2026-03-13)
 
-Three admin users (bryan, amazeeio, dgxc) with full SSH access, passwordless sudo, and LazyVim development environment. Includes Node.js, Opencode CLI, Neovim, and essential development tools.
-
-## Current Milestone: v2.2 Docker Development Environment
-
-**Goal:** Add Docker containerization platform with development tooling for all three admin users
-
-**Target features:**
-- Docker Engine and Compose for container orchestration
-- lazydocker TUI for interactive container management
-- ctop for container resource monitoring
-- dive for image layer analysis
-- BuildKit/buildx for advanced builds
-- hadolint for Dockerfile linting
+Complete Docker containerization platform with development tooling for all three admin users (bryan, amazeeio, dgxc). Includes Docker Engine, Compose, lazydocker, ctop, dive, BuildKit/buildx, and hadolint for comprehensive container development workflows.
 
 ## Core Value
 
@@ -28,23 +16,20 @@ New Ubuntu server → SSH-ready development environment in one command, with mod
 
 ## Requirements
 
-### Validated (v2.1 Shipped)
+### Validated (v2.2 Shipped)
 
 - ✓ Modular script architecture with numbered execution — v2.0
 - ✓ "bryan" user creation with SSH keys and sudo — v2.0
 - ✓ "amazeeio" user creation with SSH keys and sudo — v2.0
 - ✓ Development environment with Node.js, Neovim, LazyVim — v2.0
 - ✓ "dgxc" user with identical configuration — v2.1
-
-#### Active (v2.2 In Progress)
-
-- [ ] Docker Engine with daemon configuration
-- [ ] Docker Compose plugin
-- [ ] lazydocker TUI for container management
-- [ ] ctop for container monitoring
-- [ ] dive for image layer analysis
-- [ ] BuildKit/buildx for advanced builds
-- [ ] hadolint for Dockerfile linting
+- ✓ Docker Engine with daemon configuration — v2.2
+- ✓ Docker Compose plugin — v2.2
+- ✓ lazydocker TUI for container management — v2.2
+- ✓ ctop for container monitoring — v2.2
+- ✓ dive for image layer analysis — v2.2
+- ✓ BuildKit/buildx for advanced builds — v2.2
+- ✓ hadolint for Dockerfile linting — v2.2
 
 ### Future Milestones
 
@@ -57,8 +42,8 @@ New Ubuntu server → SSH-ready development environment in one command, with mod
 - **Target environment:** Fresh Ubuntu 24.04.3 LTS server
 - **Execution style:** SSH-based remote development
 - **Users:** Three admin users (bryan, amazeeio, dgxc) with full sudo access
-- **Tech stack:** Pure bash, 1,774 LOC
-- **Modules:** 20+ installation scripts across 7 categories
+- **Tech stack:** Pure bash, ~2,400 LOC
+- **Modules:** 25+ installation scripts across 8 categories
 
 ## Constraints
 
@@ -76,6 +61,8 @@ New Ubuntu server → SSH-ready development environment in one command, with mod
 | Passwordless sudo via sudoers.d | Unattended development workflow | ✓ Good |
 | Modular library pattern (lib/*.sh) | Reusable functions | ✓ Good |
 | AppImage for Neovim | Easier version management | ✓ Good |
+| GitHub releases for Docker tools | Latest versions, consistent pattern | ✓ Good |
+| GitHub API for version detection | Fixes 404 errors from /latest/download/ endpoint | ✓ Good |
 
 ---
-*Last updated: 2026-03-11 — Milestone v2.2 Docker Development Environment started*
+*Last updated: 2026-03-13 after v2.2 milestone completion*
