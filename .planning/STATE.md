@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v2.2
 milestone_name: Docker Development Environment
 status: unknown
-last_updated: "2026-03-13T21:07:00.722Z"
+last_updated: "2026-03-13T21:07:16.451Z"
 progress:
   total_phases: 8
   completed_phases: 8
@@ -94,6 +94,9 @@ progress:
 - [Phase 07-01]: Use GitHub releases URL with 'latest' for lazydocker — Ensures most recent version without hardcoding, follows project's GitHub binary pattern
 - [Phase 08-build-analysis-tools]: Followed lazydocker pattern exactly for dive module — Consistency across Docker tooling ensures maintainability and predictable behavior
 - [Phase 08-build-analysis-tools]: Direct binary download for hadolint (not tar.gz) — hadolint releases are single binaries unlike lazydocker which distributes tar.gz archives
+- [Phase 08-build-analysis-tools]: Use /etc/profile.d/docker-buildkit.sh instead of daemon.json for simpler, more explicit configuration
+- [Phase 08-build-analysis-tools]: Use install -m 644 for atomic file creation with proper permissions
+- [Phase 08-build-analysis-tools]: Include idempotency checks to avoid unnecessary writes on re-runs
 
 ### Technical Notes (v2.2)
 

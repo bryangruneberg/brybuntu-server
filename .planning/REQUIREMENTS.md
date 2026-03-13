@@ -26,10 +26,10 @@
 
 - [x] **DIVE-01**: dive installed for image layer analysis
 - [x] **DIVE-02**: dive can analyze local and remote images
-- [ ] **BUILD-01**: BuildKit enabled by default
-- [ ] **BUILD-02**: docker buildx plugin available
-- [ ] **LINT-01**: hadolint installed for Dockerfile linting
-- [ ] **LINT-02**: hadolint integrates with editor/CI workflows
+- [x] **BUILD-01**: BuildKit enabled by default
+- [x] **BUILD-02**: docker buildx plugin available
+- [x] **LINT-01**: hadolint installed for Dockerfile linting
+- [x] **LINT-02**: hadolint integrates with editor/CI workflows
 
 ---
 
@@ -76,10 +76,10 @@
 | CTOP-02 | Phase 7 | Complete |
 | DIVE-01 | Phase 8 | Complete |
 | DIVE-02 | Phase 8 | Complete |
-| BUILD-01 | Phase 8 | Pending |
-| BUILD-02 | Phase 8 | Pending |
-| LINT-01 | Phase 8 | Pending |
-| LINT-02 | Phase 8 | Pending |
+| BUILD-01 | Phase 8 | Complete |
+| BUILD-02 | Phase 8 | Complete |
+| LINT-01 | Phase 8 | Complete |
+| LINT-02 | Phase 8 | Complete |
 
 **Coverage:**
 - v2.2 requirements: 12 total
