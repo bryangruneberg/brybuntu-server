@@ -27,13 +27,15 @@ install_dive() {
     local arch
     arch=$(dpkg --print-architecture)
 
+    # dive uses different architecture naming than lazydocker
+    # GitHub releases use: linux_amd64, linux_arm64 (lowercase, underscore)
     local dive_arch
     case "$arch" in
         amd64)
-            dive_arch="x86_64"
+            dive_arch="amd64"
             ;;
         arm64)
-            dive_arch="aarch64"
+            dive_arch="arm64"
             ;;
         *)
             die "Unsupported architecture: $arch"
@@ -58,8 +60,9 @@ install_dive() {
     log_info "Latest dive version: v${latest_version}"
 
     # Download latest release from GitHub
+    # Note: dive uses lowercase 'linux' and 'amd64/arm64' naming (different from lazydocker)
     local download_url
-    download_url="https://github.com/wagoodman/dive/releases/download/v${latest_version}/dive_${latest_version}_Linux_${dive_arch}.tar.gz"
+    download_url="https://github.com/wagoodman/dive/releases/download/v${latest_version}/dive_${latest_version}_linux_${dive_arch}.tar.gz"
 
     # Validate the download URL exists before attempting download
     log_info "Validating download URL..."
