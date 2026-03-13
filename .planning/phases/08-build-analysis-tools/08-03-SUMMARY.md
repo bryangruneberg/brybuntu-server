@@ -69,7 +69,7 @@ Each task was committed atomically:
 
 1. **Task 1: Create hadolint installation module** - `e43b328` (feat)
 
-**Plan metadata:** `7c679a9` (docs: complete plan)
+**Plan metadata:** `859b0b1` (docs: complete plan)
 
 ## Files Created/Modified
 - `modules/50-docker/57-hadolint.sh` - Hadolint installation module with GitHub releases download
@@ -89,7 +89,8 @@ None - plan executed exactly as written.
 - [x] modules/50-docker/57-hadolint.sh exists and is executable
 - [x] 08-03-SUMMARY.md created in plan directory
 - [x] Git commit cd72c3f found with "feat(08-03)" prefix
-- [x] Git commit 7c679a9 found with "docs(08-03)" prefix
+- [x] Git commit 859b0b1 found with "docs(08-03)" prefix
+- [x] Git commit cb7f984 found with "docs(08-03)" prefix
 
 ## Issues Encountered
 
