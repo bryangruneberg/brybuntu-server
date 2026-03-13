@@ -33,7 +33,7 @@ install_lazydocker() {
             lazydocker_arch="x86_64"
             ;;
         arm64)
-            lazydocker_arch="aarch64"
+            lazydocker_arch="arm64"
             ;;
         *)
             die "Unsupported architecture: $arch"
@@ -46,9 +46,20 @@ install_lazydocker() {
     log_info "Creating /opt/lazydocker/ directory..."
     mkdir -p /opt/lazydocker || die "Failed to create /opt/lazydocker/ directory"
 
+    # Query GitHub API to get the latest release version
+    log_info "Querying GitHub API for latest lazydocker version..."
+    local latest_version
+    latest_version=$(curl -s https://api.github.com/repos/jesseduffield/lazydocker/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | sed 's/^v//')
+
+    if [[ -z "$latest_version" ]]; then
+        die "Failed to determine latest lazydocker version from GitHub API"
+    fi
+
+    log_info "Latest lazydocker version: v${latest_version}"
+
     # Download latest release from GitHub
     local download_url
-    download_url="https://github.com/jesseduffield/lazydocker/releases/latest/download/lazydocker_latest_Linux_${lazydocker_arch}.tar.gz"
+    download_url="https://github.com/jesseduffield/lazydocker/releases/download/v${latest_version}/lazydocker_${latest_version}_Linux_${lazydocker_arch}.tar.gz"
 
     local temp_dir
     temp_dir=$(mktemp -d)
