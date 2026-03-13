@@ -133,4 +133,12 @@ None currently.
 
 ---
 
-*Project state tracked automatically. Last updated: 2026-03-11 - Roadmap created for v2.2*
+*Project state tracked automatically. Last updated: 2026-03-13 - Quick task 6 completed: Fixed lazydocker 404 error*
+
+---
+
+## Quick Tasks
+
+| Task | Status | Description |
+|------|--------|-------------|
+| Quick 6 | ✅ Complete | Fixed lazydocker 404 error using GitHub API for version detection |
