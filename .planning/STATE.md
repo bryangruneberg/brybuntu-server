@@ -142,3 +142,8 @@ None currently.
 | Task | Status | Description |
 |------|--------|-------------|
 | Quick 6 | ✅ Complete | Fixed lazydocker 404 error using GitHub API for version detection |
+| Quick 7 | ✅ Complete | Fixed dive 404 error using GitHub API for version detection |
+
+---
+
+*Last updated: 2026-03-13 - Quick task 7 completed: Fixed dive 404 error*
