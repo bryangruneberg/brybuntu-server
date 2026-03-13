@@ -19,8 +19,8 @@
 
 - [ ] **LAZY-01**: lazydocker installed and available in PATH
 - [ ] **LAZY-02**: lazydocker can connect to local Docker daemon
-- [ ] **CTOP-01**: ctop installed for container resource monitoring
-- [ ] **CTOP-02**: ctop displays running containers with CPU/memory metrics
+- [x] **CTOP-01**: ctop installed for container resource monitoring
+- [x] **CTOP-02**: ctop displays running containers with CPU/memory metrics
 
 ### Build & Analysis Tools
 
@@ -72,8 +72,8 @@
 | DOCK-05 | Phase 6 | Complete |
 | LAZY-01 | Phase 7 | Pending |
 | LAZY-02 | Phase 7 | Pending |
-| CTOP-01 | Phase 7 | Pending |
-| CTOP-02 | Phase 7 | Pending |
+| CTOP-01 | Phase 7 | Complete |
+| CTOP-02 | Phase 7 | Complete |
 | DIVE-01 | Phase 8 | Pending |
 | DIVE-02 | Phase 8 | Pending |
 | BUILD-01 | Phase 8 | Pending |
