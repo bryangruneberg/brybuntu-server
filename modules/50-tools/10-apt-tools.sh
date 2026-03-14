@@ -46,6 +46,7 @@ install_apt_packages() {
     install_package "imagemagick"
     install_package "fd-find"
     install_package "kitty"
+    install_package "btop"
     
     log_info "All apt packages installed successfully"
 }
