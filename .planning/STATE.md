@@ -146,4 +146,12 @@ None currently.
 
 ---
 
-*Last updated: 2026-03-13 - Quick task 7 completed: Fixed dive 404 error*
+## Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 8 | Add openclaw user with same setup as DGxC, bryan, and amazeeio | 2026-03-26 | 47c347f | [8-add-openclaw-user-with-same-setup-as-dgx](./quick/8-add-openclaw-user-with-same-setup-as-dgx/) |
+
+---
+
+*Last updated: 2026-03-26 - Completed quick task 8: Add openclaw user with same setup as DGxC, bryan, and amazeeio*
