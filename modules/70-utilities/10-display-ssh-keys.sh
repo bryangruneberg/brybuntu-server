@@ -1,6 +1,6 @@
 #!/bin/bash
 # Display SSH Public Keys Module
-# Displays Ed25519 public keys for root, bryan, and amazeeio
+# Displays Ed25519 public keys for root, bryan, amazeeio, dgxc, and openclaw
 
 set -euo pipefail
 
@@ -12,7 +12,7 @@ source "$(dirname "$0")/../../lib/common.sh"
 # ============================================================================
 
 display_ssh_keys() {
-    local users=("root" "bryan" "amazeeio" "dgxc")
+    local users=("root" "bryan" "amazeeio" "dgxc" "openclaw")
     local first_key=true
     
     echo ""

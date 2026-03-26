@@ -74,7 +74,7 @@ generate_ssh_key_for_user() {
 verify_ssh_keys() {
     log_info "Verifying SSH keys..."
 
-    local users=("root" "bryan" "amazeeio" "dgxc")
+    local users=("root" "bryan" "amazeeio" "dgxc" "openclaw")
     local all_ok=true
 
     for username in "${users[@]}"; do
@@ -133,13 +133,14 @@ verify_ssh_keys() {
 main() {
     check_root
 
-    log_info "Starting SSH key generation for root, bryan, amazeeio, and dgxc"
+    log_info "Starting SSH key generation for root, bryan, amazeeio, dgxc, and openclaw"
 
     # Generate keys for each user
     generate_ssh_key_for_user "root"
     generate_ssh_key_for_user "bryan"
     generate_ssh_key_for_user "amazeeio"
     generate_ssh_key_for_user "dgxc"
+    generate_ssh_key_for_user "openclaw"
 
     # Verify all keys
     verify_ssh_keys

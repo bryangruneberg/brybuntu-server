@@ -29,7 +29,7 @@ add_users_to_docker() {
     log_info "Configuring Docker group membership..."
 
     # Admin users who need Docker access
-    local USERS=(bryan amazeeio dgxc)
+    local USERS=(bryan amazeeio dgxc openclaw)
 
     for user in "${USERS[@]}"; do
         # Check if user exists
