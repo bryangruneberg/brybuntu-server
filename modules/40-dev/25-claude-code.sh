@@ -1,6 +1,6 @@
 #!/bin/bash
 # Claude Code Installation Module
-# Installs Claude Code CLI via official installer script
+# Installs Claude Code CLI globally via npm (available to all users)
 
 set -euo pipefail
 
@@ -17,7 +17,7 @@ install_claude_code() {
         return 0
     fi
 
-    # Defensive dependency check: Node.js and npm required by install.sh
+    # Defensive dependency check: Node.js and npm required for global install
     if ! command -v node &>/dev/null; then
         die "Node.js is required but not installed. Run 10-node.sh first."
     fi
@@ -25,15 +25,9 @@ install_claude_code() {
         die "npm is required but not installed. Run 10-node.sh first."
     fi
 
-    # Ensure curl is available
-    log_info "Installing dependencies..."
-    export DEBIAN_FRONTEND=noninteractive
-    apt-get update -qq || true
-    apt-get install -y -qq curl || die "Failed to install curl"
-
-    # Run official Claude Code installer
-    log_info "Running official Claude Code installer..."
-    curl -fsSL https://claude.ai/install.sh | bash || die "Failed to install Claude Code"
+    # Install Claude Code globally via npm (available to all users at /usr/local/bin/claude)
+    log_info "Installing Claude Code globally via npm..."
+    npm install -g @anthropic-ai/claude-code || die "Failed to install Claude Code"
 
     # Verify installation
     if command -v claude &>/dev/null; then
