@@ -2,6 +2,7 @@
 # PHP 8.3 CLI Installation Module
 # Installs PHP 8.3 CLI with Laravel-required extensions and Composer
 # Does NOT install Apache, php-fpm, or any web server components
+# PHP 8.3 is available in Ubuntu 24.04 (Noble) default repositories — no PPA needed
 
 set -euo pipefail
 
@@ -12,7 +13,8 @@ source "$(dirname "$0")/../../lib/common.sh"
 # PHP 8.3 CLI Installation Functions
 # ============================================================================
 
-# Install PHP 8.3 CLI and required extensions from ondrej/php PPA
+# Install PHP 8.3 CLI and required extensions
+# PHP 8.3 ships in Ubuntu 24.04 default repos — no external PPA required
 install_php_cli() {
     log_info "Starting PHP 8.3 CLI installation..."
 
@@ -24,30 +26,9 @@ install_php_cli() {
         return 0
     fi
 
-    # Install prerequisites
-    log_info "Installing prerequisites..."
+    log_info "Updating package list..."
     export DEBIAN_FRONTEND=noninteractive
     apt-get update -qq || die "Failed to update package list"
-    apt-get install -y -qq ca-certificates curl gnupg || die "Failed to install prerequisites"
-
-    # Add ondrej/php PPA GPG key
-    log_info "Adding ondrej/php PPA GPG key..."
-    install -m 0755 -d /etc/apt/keyrings || die "Failed to create keyrings directory"
-    curl -fsSL https://packages.sury.org/php/apt.gpg \
-        | gpg --dearmor -o /etc/apt/keyrings/ondrej-php.gpg \
-        || die "Failed to download ondrej/php GPG key"
-    chmod a+r /etc/apt/keyrings/ondrej-php.gpg || die "Failed to set permissions on GPG key"
-
-    # Add ondrej/php apt repository
-    log_info "Adding ondrej/php apt repository..."
-    local codename
-    codename=$(. /etc/os-release && echo "$VERSION_CODENAME")
-    echo "deb [signed-by=/etc/apt/keyrings/ondrej-php.gpg] https://packages.sury.org/php/ubuntu ${codename} main" \
-        > /etc/apt/sources.list.d/ondrej-php.list \
-        || die "Failed to add ondrej/php repository"
-
-    # Update apt cache with new repository
-    apt-get update -qq || die "Failed to update package list with ondrej/php repository"
 
     # Install PHP 8.3 CLI and Laravel-required extensions
     # Explicitly excluded: apache2, libapache2-mod-php, php8.3-fpm
