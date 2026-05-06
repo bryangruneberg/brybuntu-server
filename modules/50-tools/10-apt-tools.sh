@@ -47,6 +47,7 @@ install_apt_packages() {
     install_package "fd-find"
     install_package "kitty"
     install_package "btop"
+    install_package "hyfetch"
     
     log_info "All apt packages installed successfully"
 }
